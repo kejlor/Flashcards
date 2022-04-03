@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct iFlashCardsApp: App {
+    @StateObject private var store = DecksDataStore()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(store)
         }
     }
 }

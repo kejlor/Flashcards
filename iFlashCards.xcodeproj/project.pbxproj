@@ -11,6 +11,20 @@
 		E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B2927F9CDDB0030D369 /* ContentView.swift */; };
 		E9AC2B2C27F9CDDC0030D369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AC2B2B27F9CDDC0030D369 /* Assets.xcassets */; };
 		E9AC2B2F27F9CDDC0030D369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AC2B2E27F9CDDC0030D369 /* Preview Assets.xcassets */; };
+		E9AC2B3E27F9CEC40030D369 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B3D27F9CEC40030D369 /* Deck.swift */; };
+		E9AC2B4027F9CEE90030D369 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B3F27F9CEE90030D369 /* FileManager+Ext.swift */; };
+		E9AC2B4227F9CF340030D369 /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4127F9CF340030D369 /* DeckViewModel.swift */; };
+		E9AC2B4427F9D2860030D369 /* NewDeckSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4327F9D2860030D369 /* NewDeckSheet.swift */; };
+		E9AC2B4627F9D2F30030D369 /* AddDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4527F9D2F30030D369 /* AddDeckView.swift */; };
+		E9AC2B4827F9D3570030D369 /* DeckCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4727F9D3570030D369 /* DeckCard.swift */; };
+		E9AC2B4A27F9D4600030D369 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4927F9D4600030D369 /* DeckView.swift */; };
+		E9AC2B4C27F9D4C20030D369 /* DeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4B27F9D4C20030D369 /* DeckList.swift */; };
+		E9AC2B4E27F9D5F10030D369 /* DecksDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4D27F9D5F10030D369 /* DecksDataStore.swift */; };
+		E9AC2B5027F9E04C0030D369 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B4F27F9E04C0030D369 /* HomeView.swift */; };
+		E9AC2B5227F9F7000030D369 /* FlashcardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */; };
+		E9AC2B5427F9F7260030D369 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5327F9F7260030D369 /* CustomButton.swift */; };
+		E9AC2B5627F9F7430030D369 /* AddFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5527F9F7430030D369 /* AddFlashcardView.swift */; };
+		E9AC2B5827F9F74C0030D369 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +33,20 @@
 		E9AC2B2927F9CDDB0030D369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9AC2B2B27F9CDDC0030D369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9AC2B2E27F9CDDC0030D369 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9AC2B3D27F9CEC40030D369 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		E9AC2B3F27F9CEE90030D369 /* FileManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
+		E9AC2B4127F9CF340030D369 /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
+		E9AC2B4327F9D2860030D369 /* NewDeckSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckSheet.swift; sourceTree = "<group>"; };
+		E9AC2B4527F9D2F30030D369 /* AddDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckView.swift; sourceTree = "<group>"; };
+		E9AC2B4727F9D3570030D369 /* DeckCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCard.swift; sourceTree = "<group>"; };
+		E9AC2B4927F9D4600030D369 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		E9AC2B4B27F9D4C20030D369 /* DeckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckList.swift; sourceTree = "<group>"; };
+		E9AC2B4D27F9D5F10030D369 /* DecksDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksDataStore.swift; sourceTree = "<group>"; };
+		E9AC2B4F27F9E04C0030D369 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCard.swift; sourceTree = "<group>"; };
+		E9AC2B5327F9F7260030D369 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E9AC2B5527F9F7430030D369 /* AddFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlashcardView.swift; sourceTree = "<group>"; };
+		E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +80,12 @@
 			isa = PBXGroup;
 			children = (
 				E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */,
-				E9AC2B2927F9CDDB0030D369 /* ContentView.swift */,
+				E9AC2B3A27F9CE240030D369 /* Model */,
+				E9AC2B3927F9CE150030D369 /* Extensions */,
+				E9AC2B3827F9CE100030D369 /* Views */,
+				E9AC2B3727F9CE060030D369 /* ViewModel */,
+				E9AC2B3627F9CE010030D369 /* Service */,
+				E9AC2B3527F9CDF80030D369 /* Components */,
 				E9AC2B2B27F9CDDC0030D369 /* Assets.xcassets */,
 				E9AC2B2D27F9CDDC0030D369 /* Preview Content */,
 			);
@@ -65,6 +98,63 @@
 				E9AC2B2E27F9CDDC0030D369 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E9AC2B3527F9CDF80030D369 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC2B4327F9D2860030D369 /* NewDeckSheet.swift */,
+				E9AC2B4727F9D3570030D369 /* DeckCard.swift */,
+				E9AC2B4B27F9D4C20030D369 /* DeckList.swift */,
+				E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */,
+				E9AC2B5327F9F7260030D369 /* CustomButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E9AC2B3627F9CE010030D369 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC2B4D27F9D5F10030D369 /* DecksDataStore.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E9AC2B3727F9CE060030D369 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC2B4127F9CF340030D369 /* DeckViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E9AC2B3827F9CE100030D369 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC2B2927F9CDDB0030D369 /* ContentView.swift */,
+				E9AC2B4527F9D2F30030D369 /* AddDeckView.swift */,
+				E9AC2B4927F9D4600030D369 /* DeckView.swift */,
+				E9AC2B4F27F9E04C0030D369 /* HomeView.swift */,
+				E9AC2B5527F9F7430030D369 /* AddFlashcardView.swift */,
+				E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9AC2B3927F9CE150030D369 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC2B3F27F9CEE90030D369 /* FileManager+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9AC2B3A27F9CE240030D369 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC2B3D27F9CEC40030D369 /* Deck.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +227,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AC2B4027F9CEE90030D369 /* FileManager+Ext.swift in Sources */,
+				E9AC2B5827F9F74C0030D369 /* FlashcardView.swift in Sources */,
+				E9AC2B4E27F9D5F10030D369 /* DecksDataStore.swift in Sources */,
+				E9AC2B3E27F9CEC40030D369 /* Deck.swift in Sources */,
+				E9AC2B4C27F9D4C20030D369 /* DeckList.swift in Sources */,
+				E9AC2B5427F9F7260030D369 /* CustomButton.swift in Sources */,
+				E9AC2B4827F9D3570030D369 /* DeckCard.swift in Sources */,
+				E9AC2B4427F9D2860030D369 /* NewDeckSheet.swift in Sources */,
+				E9AC2B5227F9F7000030D369 /* FlashcardCard.swift in Sources */,
+				E9AC2B4A27F9D4600030D369 /* DeckView.swift in Sources */,
+				E9AC2B4227F9CF340030D369 /* DeckViewModel.swift in Sources */,
+				E9AC2B5627F9F7430030D369 /* AddFlashcardView.swift in Sources */,
 				E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */,
+				E9AC2B5027F9E04C0030D369 /* HomeView.swift in Sources */,
 				E9AC2B2827F9CDDB0030D369 /* iFlashCardsApp.swift in Sources */,
+				E9AC2B4627F9D2F30030D369 /* AddDeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
