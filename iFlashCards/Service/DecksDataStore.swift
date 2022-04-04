@@ -81,13 +81,21 @@ final class DecksDataStore: ObservableObject {
         loadDecks()
     }
     
+    func deleteFlashcard(deck: Deck, flashcard: Flashcard) {
+        guard let deckIndex = selectedDeckIndex(deck: deck) else { return }
+        guard let flashcardIndex = selectedFlashcardIndex(deck: deck, flashcard: flashcard) else { return }
+        
+        decks[deckIndex].flashcards.remove(at: flashcardIndex)
+        saveDecks()
+    }
+    
     private func selectedDeckIndex(deck: Deck) -> Int? {
         guard let index = decks.firstIndex(where: { $0.id == deck.id }) else { return nil }
         return index
     }
     
     private func selectedFlashcardIndex(deck: Deck, flashcard: Flashcard) -> Int? {
-        guard let index = deck.flashcards.firstIndex(where: { $0.id == deck.id }) else { return nil }
+        guard let index = deck.flashcards.firstIndex(where: { $0.id == flashcard.id }) else { return nil }
         return index
     }
 }

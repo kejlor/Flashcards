@@ -32,6 +32,14 @@ struct FlashcardView: View {
                         .foregroundColor(.black)
                     }   
                 }
+                
+                Button {
+                    store.deleteFlashcard(deck: deck, flashcard: flashcard)
+                } label: {
+                    Text("Usuń fiszkę")
+                        .foregroundColor(.red)
+                }
+
             }
         }
         .navigationBarItems(trailing: Button(action: {

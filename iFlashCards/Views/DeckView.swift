@@ -23,7 +23,7 @@ struct DeckView: View {
                     
                     if (deck.flashcards.isEmpty) {
                         Button {
-                            store.addMockFlashcard(deck: deck)
+                            isAdding.toggle()
                         } label: {
                             Text("Dodaj fiszke")
                         }
@@ -32,13 +32,20 @@ struct DeckView: View {
                             FlashcardList(deck: deck, flashcards: deck.flashcards)
                         }
                     }
+                    
+                    Button {
+                        store.deleteDeck(deck: deck)
+                    } label: {
+                        Text("Usuń talie")
+                    }
+
                 }
             }
         }
         .navigationBarItems(trailing: Button(action: {
             isAdding.toggle()
         }, label: {
-            Text("Dodaj".uppercased())
+            Text("Dodaj")
         }))
         .sheet(isPresented: $isAdding) {
             AddFlashcardView(isAdding: $isAdding, deck: deck)
