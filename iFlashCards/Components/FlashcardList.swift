@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct FlashcardList: View {
+    var deck: Deck
     var flashcards: [Flashcard]
     
     var body: some View {
         VStack {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 ForEach(flashcards) { flashcard in
-                    NavigationLink(destination: FlashcardView(flashcard: flashcard)) {
+                    NavigationLink(destination: FlashcardView(flashcard: flashcard, deck: deck)) {
                         FlashcardCard(flashcard: flashcard)
                     }
                 }
@@ -27,6 +28,6 @@ struct FlashcardList: View {
 
 struct FlashCardList_Previews: PreviewProvider {
     static var previews: some View {
-        FlashcardList(flashcards: Deck.mockDecks[0].flashcards)
+        FlashcardList(deck: Deck.mockDecks[0], flashcards: Deck.mockDecks[0].flashcards)
     }
 }

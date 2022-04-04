@@ -17,23 +17,23 @@ struct AddFlashcardView: View {
     
     var body: some View {
         NavigationView {
-                VStack {
-                    HStack {
-                        Text("Tekst z przodu fiszki")
-                        TextField("Wprowadź tekst z przodu fiszki", text: $foregroundText)
-                        
-                        Text("Tekst z tyłu fiszki")
-                        TextField("Wprowadź tekst z tyłu fiszki", text: $backgroundText)
-                    }
-                    
-                    Spacer()
-                    
-                    Button {
-                        store.addNewFlashcard(deck: deck, foregroundText: foregroundText, backgroundText: backgroundText)
-                    } label: {
-                        Text("Dodaj fiszke")
-                    }
+            VStack {
+                
+                Text("Tekst z przodu fiszki")
+                TextField("Wprowadź tekst z przodu fiszki", text: $foregroundText)
+                
+                Text("Tekst z tyłu fiszki")
+                TextField("Wprowadź tekst z tyłu fiszki", text: $backgroundText)
+                
+                Spacer()
+                
+                Button {
+                    store.addNewFlashcard(deck: deck, foregroundText: foregroundText, backgroundText: backgroundText)
+                    isAdding.toggle()
+                } label: {
+                    Text("Dodaj fiszke")
                 }
+            }
         }
     }
 }

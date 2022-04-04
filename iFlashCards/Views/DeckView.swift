@@ -11,9 +11,7 @@ struct DeckView: View {
     @EnvironmentObject var store: DecksDataStore
     @State private var isAdding = false
     var deck: Deck
-    
-    // do przerobienia
-    
+        
     var body: some View {
         NavigationView {
             ZStack(alignment: .center) {
@@ -30,17 +28,13 @@ struct DeckView: View {
                             Text("Dodaj fiszke")
                         }
                     } else {
-                        FlashcardList(flashcards: deck.flashcards)
+                        ScrollView {
+                            FlashcardList(deck: deck, flashcards: deck.flashcards)
+                        }
                     }
                 }
             }
         }
-//        .navigationBarItems(trailing: Button(action: {
-//            isAdding.toggle()
-//        }, label: {
-//            Text("Edit".uppercased())
-//        }))
-//        .sheet(isPresented: $isAdding, content: AddFlashcardView(isAdding: $isAdding, deck: deck))
         .navigationBarItems(trailing: Button(action: {
             isAdding.toggle()
         }, label: {
