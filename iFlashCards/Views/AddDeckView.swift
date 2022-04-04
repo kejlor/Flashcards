@@ -9,44 +9,27 @@ import SwiftUI
 
 struct AddDeckView: View {
     @Environment(\.presentationMode) var presentationMode
-    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var store: DecksDataStore
-    @State private var title = ""
-    
-    // do przerobienia
+    @State private var deckTitle = ""
     
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Tytuł")) {
-                    TextField("Nazwa tali", text: $title)
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            self.presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Label("Cancel", systemImage: "xmark")
-                                .labelStyle(.iconOnly)
-                        }
+                VStack {
+                    HStack {
+                        Text("Tytuł talii")
+                        TextField("Wprowadź tytuł talii", text: $deckTitle)
                     }
                     
-                    ToolbarItem {
-                            Button {
-                                store.createDeck(title: title, flashcards: [Flashcard]())
-                                self.presentationMode.wrappedValue.dismiss()
-                            } label: {
-                                Label("Dodaj", systemImage: "checkmark")
-                                    .labelStyle(.iconOnly)
-                            }
-                            .disabled(title.isEmpty)
+                    Spacer()
+                    
+                    Button {
+                        store.createDeck(title: deckTitle, flashcards: [Flashcard]())
+                    } label: {
+                        Text("Dodaj talie")
                     }
+                    .disabled(deckTitle.isEmpty)
                 }
-            }
-            .navigationTitle("Nowa talia")
-            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationViewStyle(.stack)
     }
 }
 

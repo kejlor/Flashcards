@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct FlashcardView: View {
+    
+    @EnvironmentObject var store: DecksDataStore
+    var flashcard: Flashcard
+    @State private var foregroundText = ""
+    @State private var backgroundText = ""
+    
+    init(flashcard: Flashcard) {
+        self.flashcard = flashcard
+        self.foregroundText = flashcard.foregroundText
+        self.backgroundText = flashcard.backgroundText
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Tekst z przodu fiszki")
+                TextField("Dodaj tekst z przodu fiszki", text: $foregroundText)
+                Text("Tekst z tyłu fiszki")
+                TextField("Dodaj tekst z tyłu fiszki", text: $foregroundText)
+                
+                HStack {
+                    
+                }
+            }
+//            .navigationTitle("Edytuj fiszkę")
+        }
     }
 }
 
 struct FlashcardView_Previews: PreviewProvider {
     static var previews: some View {
-        FlashcardView()
+        FlashcardView(flashcard: Flashcard(foregroundText: "Pies", backgroundText: "Dog"))
     }
 }

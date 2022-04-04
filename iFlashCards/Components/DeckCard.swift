@@ -11,13 +11,21 @@ struct DeckCard: View {
     var deck: Deck
     
     var body: some View {
-        ScrollView {
+        ZStack {
+            Card()
+            
             VStack {
                 Text(deck.title)
-                    .font(.largeTitle)
-                    .bold()
-                    .multilineTextAlignment(.center)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding()
+                    .lineLimit(1)
+                
+                Text("Ilość fiszek: \(deck.flashcards.count)")
+                    .font(.caption)
             }
+            .foregroundColor(.accentColor)
+            .multilineTextAlignment(.center)
         }
     }
 }

@@ -12,24 +12,25 @@ struct HomeView: View {
     
     // do przerobienia
     var body: some View {
-        NavigationView {
-            VStack {
-                if (store.decks.isEmpty) {
-                    NewDeckSheet()
-                } else {
-                    ScrollView {
-                        DeckList(decks: store.decks)
+        VStack {
+            NavigationView {
+                VStack {
+                    if (store.decks.isEmpty) {
+                        Text("Dodaj pierwszą talie!")
+                    } else {
+                        ScrollView {
+                            DeckList(decks: store.decks)
+                        }
+                        .navigationTitle("Moje talie")
+                        .foregroundColor(.white)
                     }
-                    .navigationTitle("Moje talie")
                 }
+                .background(Color("Background"))
             }
-            .background(Color("BackgroundColor"))
+            .navigationViewStyle(.stack)
+            .foregroundColor(.black)
         }
-        .navigationViewStyle(.stack)
-        .foregroundColor(.black)
-    }
-    
-    
+        }
 }
 
 struct HomeView_Previews: PreviewProvider {

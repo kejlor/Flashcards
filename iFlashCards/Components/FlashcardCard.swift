@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct FlashcardCard: View {
+    @State private var isFaceUp = false
+    var flashcard: Flashcard
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Card()
+            
+            VStack {
+                Text(flashcard.foregroundText)
+                    .padding()
+                
+                Divider()
+                
+                Text(flashcard.backgroundText)
+                    .padding()
+            }
+            .padding()
+        }
+        .frame(width: 180)
     }
 }
 
 struct FlashcardCard_Previews: PreviewProvider {
     static var previews: some View {
-        FlashcardCard()
+        FlashcardCard(flashcard: Flashcard(foregroundText: "Dog", backgroundText: "Pies"))
     }
 }

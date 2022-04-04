@@ -11,16 +11,7 @@ struct DeckList: View {
     var decks: [Deck]
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("\(decks.count) \(decks.count > 1 ? "Talie" : "Talia")")
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .opacity(0.7)
-                
-                Spacer()
-            }
-            
+        VStack {            
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 ForEach(decks) { deck in
                     NavigationLink(destination: DeckView(deck: deck)) {

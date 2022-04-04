@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var selectedTab = 0
+    
     var body: some View {
-        TabView {
+        ZStack {
+            TabView(selection: $selectedTab) {
                 HomeView()
-                    .tabItem {
-                        Text("Dom")
-                    }
                     .tag(0)
-                
-                NewDeckSheet()
                     .tabItem {
-                        Text("Dodaj")
+                        Label("Talie", systemImage: "house")
                     }
+                AddDeckView()
                     .tag(1)
+                    .tabItem {
+                        Label("Dodaj talie", systemImage: "plus")
+                    }
+            }
         }
-        .accentColor(.black)
+        .background(Color("Gray"))
+        .ignoresSafeArea()
     }
 }
 

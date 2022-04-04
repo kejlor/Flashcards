@@ -62,8 +62,18 @@ final class DecksDataStore: ObservableObject {
         loadDecks()
     }
     
+    func addNewFlashcard(deck: Deck, foregroundText: String, backgroundText: String) {
+        let newFlashcard = Flashcard(foregroundText: foregroundText, backgroundText: backgroundText)
+        guard let index = selectedDeckIndex(deck: deck) else { return  }
+        
+        decks[index].flashcards.append(newFlashcard)
+        saveDecks()
+        loadDecks()
+    }
+    
     private func selectedDeckIndex(deck: Deck) -> Int? {
         guard let index = decks.firstIndex(where: { $0.id == deck.id }) else { return nil }
         return index
     }
+    
 }
