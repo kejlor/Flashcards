@@ -19,11 +19,28 @@ struct DeckRevisionView: View {
             Text(deck.title)
                 .font(.title)
             
+            Spacer()
+            
             ZStack {
                 Card()
                 Text(isFlipped ? sortedFlashcards[currentFlashcard].foregroundText : sortedFlashcards[currentFlashcard].backgroundText)
             }
             
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "checkmark.circle")
+                }
+
+                Button {
+                    
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .rotationEffect(.degrees(310))
+                }
+            }
+            .opacity(isFlipped ? 1 : 0)
             
             Button {
                 moveToTheNextFlashcard()
@@ -31,6 +48,7 @@ struct DeckRevisionView: View {
                 Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
             }
 
+            Spacer()
         }
     }
 }

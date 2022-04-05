@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E93A9DD927FCB820004AF28C /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A9DD827FCB820004AF28C /* EditDeckView.swift */; };
 		E94F010D27FB56F000FE43B1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F010C27FB56F000FE43B1 /* Card.swift */; };
 		E94F010F27FB617100FE43B1 /* AddFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */; };
 		E94F011327FB673200FE43B1 /* FlashcardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011227FB673200FE43B1 /* FlashcardList.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E93A9DD827FCB820004AF28C /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		E94F010C27FB56F000FE43B1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlashcardView.swift; sourceTree = "<group>"; };
 		E94F011227FB673200FE43B1 /* FlashcardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardList.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */,
 				E94F011627FB760A00FE43B1 /* EditFlashcardView.swift */,
 				E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */,
+				E93A9DD827FCB820004AF28C /* EditDeckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				E94F010F27FB617100FE43B1 /* AddFlashcardView.swift in Sources */,
 				E9AC2B5227F9F7000030D369 /* FlashcardCard.swift in Sources */,
 				E9AC2B4A27F9D4600030D369 /* DeckView.swift in Sources */,
+				E93A9DD927FCB820004AF28C /* EditDeckView.swift in Sources */,
 				E94F011727FB760A00FE43B1 /* EditFlashcardView.swift in Sources */,
 				E9AC2B5627F9F7430030D369 /* AddDeckView.swift in Sources */,
 				E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */,

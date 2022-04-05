@@ -18,7 +18,6 @@ struct FlashcardView: View {
     
         let binding = Binding(get: { self.flashcard}, set: { self.flashcard = $0 })
         
-//        NavigationView {
             VStack {
                 HStack {
                     FlashcardCard(flashcard: flashcard)
@@ -41,7 +40,6 @@ struct FlashcardView: View {
                 }
 
             }
-//        }
         .navigationBarItems(trailing: Button(action: {
             isEditing.toggle()
         }, label: {
