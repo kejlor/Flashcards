@@ -13,7 +13,7 @@ struct AddDeckView: View {
     @State private var deckTitle = ""
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
                 VStack {
                     HStack {
                         Text("Tytuł talii")
@@ -29,7 +29,7 @@ struct AddDeckView: View {
                     }
                     .disabled(deckTitle.isEmpty)
                 }
-        }
+//        }
     }
 }
 

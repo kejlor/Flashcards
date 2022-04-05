@@ -13,13 +13,15 @@ struct DeckView: View {
     var deck: Deck
         
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack(alignment: .center) {
                 VStack {
-                    Text(deck.title)
-                        .font(.largeTitle)
-                        .bold()
-                        .multilineTextAlignment(.center)
+                    HStack {
+                        Text(deck.title)
+                            .font(.largeTitle)
+                            .bold()
+                            .multilineTextAlignment(.center)
+                    }
                     
                     if (deck.flashcards.isEmpty) {
                         Button {
@@ -38,10 +40,9 @@ struct DeckView: View {
                     } label: {
                         Text("Usuń talie")
                     }
-
                 }
             }
-        }
+//        }
         .navigationBarItems(trailing: Button(action: {
             isAdding.toggle()
         }, label: {
@@ -50,6 +51,7 @@ struct DeckView: View {
         .sheet(isPresented: $isAdding) {
             AddFlashcardView(isAdding: $isAdding, deck: deck)
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

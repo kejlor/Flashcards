@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FlashcardCard: View {
-    @State private var isFaceUp = false
     var flashcard: Flashcard
     
     var body: some View {

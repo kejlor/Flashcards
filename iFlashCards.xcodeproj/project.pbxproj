@@ -11,6 +11,7 @@
 		E94F010F27FB617100FE43B1 /* AddFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */; };
 		E94F011327FB673200FE43B1 /* FlashcardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011227FB673200FE43B1 /* FlashcardList.swift */; };
 		E94F011727FB760A00FE43B1 /* EditFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011627FB760A00FE43B1 /* EditFlashcardView.swift */; };
+		E94F011927FB928F00FE43B1 /* DeckRevisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */; };
 		E9AC2B2827F9CDDB0030D369 /* iFlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */; };
 		E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B2927F9CDDB0030D369 /* ContentView.swift */; };
 		E9AC2B2C27F9CDDC0030D369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AC2B2B27F9CDDC0030D369 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlashcardView.swift; sourceTree = "<group>"; };
 		E94F011227FB673200FE43B1 /* FlashcardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardList.swift; sourceTree = "<group>"; };
 		E94F011627FB760A00FE43B1 /* EditFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardView.swift; sourceTree = "<group>"; };
+		E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRevisionView.swift; sourceTree = "<group>"; };
 		E9AC2B2427F9CDDB0030D369 /* iFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlashCardsApp.swift; sourceTree = "<group>"; };
 		E9AC2B2927F9CDDB0030D369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */,
 				E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */,
 				E94F011627FB760A00FE43B1 /* EditFlashcardView.swift */,
+				E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				E94F011727FB760A00FE43B1 /* EditFlashcardView.swift in Sources */,
 				E9AC2B5627F9F7430030D369 /* AddDeckView.swift in Sources */,
 				E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */,
+				E94F011927FB928F00FE43B1 /* DeckRevisionView.swift in Sources */,
 				E9AC2B5027F9E04C0030D369 /* HomeView.swift in Sources */,
 				E9AC2B2827F9CDDB0030D369 /* iFlashCardsApp.swift in Sources */,
 			);

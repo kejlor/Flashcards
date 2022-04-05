@@ -18,7 +18,7 @@ struct FlashcardView: View {
     
         let binding = Binding(get: { self.flashcard}, set: { self.flashcard = $0 })
         
-        NavigationView {
+//        NavigationView {
             VStack {
                 HStack {
                     FlashcardCard(flashcard: flashcard)
@@ -36,12 +36,12 @@ struct FlashcardView: View {
                 Button {
                     store.deleteFlashcard(deck: deck, flashcard: flashcard)
                 } label: {
-                    Text("Usuń fiszkę")
+                    Text("Usuń fiszke")
                         .foregroundColor(.red)
                 }
 
             }
-        }
+//        }
         .navigationBarItems(trailing: Button(action: {
             isEditing.toggle()
         }, label: {
@@ -50,6 +50,7 @@ struct FlashcardView: View {
         .sheet(isPresented: $isEditing) {
             EditFlashcardView(isEditing: $isEditing, flashcard: binding, deck: deck)
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

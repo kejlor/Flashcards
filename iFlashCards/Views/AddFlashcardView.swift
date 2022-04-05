@@ -16,7 +16,7 @@ struct AddFlashcardView: View {
     let deck: Deck
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 
                 Text("Tekst z przodu fiszki")
@@ -34,7 +34,7 @@ struct AddFlashcardView: View {
                     Text("Dodaj fiszke")
                 }
             }
-        }
+//        }
     }
 }
 
