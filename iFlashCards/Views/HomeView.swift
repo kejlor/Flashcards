@@ -25,12 +25,12 @@ struct HomeView: View {
                         .foregroundColor(.white)
                     }
                 }
-                .background(Color("Background"))
+                //                .background(Color("Background"))
             }
             .navigationViewStyle(.stack)
             .foregroundColor(.black)
         }
-        }
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {

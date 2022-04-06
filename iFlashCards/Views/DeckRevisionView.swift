@@ -12,7 +12,7 @@ struct DeckRevisionView: View {
     @State private var isFlipped = false
     @State private var currentFlashcard = 0
     var deck: Deck
-    var sortedFlashcards: [Flashcard]
+    @State var sortedFlashcards: [Flashcard]
     
     var body: some View {
         VStack {
@@ -42,10 +42,20 @@ struct DeckRevisionView: View {
             }
             .opacity(isFlipped ? 1 : 0)
             
-            Button {
-                moveToTheNextFlashcard()
-            } label: {
-                Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
+            if (currentFlashcard == sortedFlashcards.count - 1 && isFlipped) {
+                NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 100, height: 100)
+                        Text("Skończyłeś powtórkę")
+                    }
+                }
+            } else {
+                Button {
+                    moveToTheNextFlashcard()
+                } label: {
+                    Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
+                }
             }
             
             Spacer()

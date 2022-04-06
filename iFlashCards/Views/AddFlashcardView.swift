@@ -13,7 +13,7 @@ struct AddFlashcardView: View {
     @Binding var isAdding: Bool
     @State private var foregroundText = ""
     @State private var backgroundText = ""
-    let deck: Deck
+    var deck: Deck
     
     var body: some View {
             VStack {

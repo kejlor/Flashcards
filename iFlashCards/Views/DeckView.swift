@@ -11,16 +11,17 @@ struct DeckView: View {
     @EnvironmentObject var store: DecksDataStore
     @State private var isAdding = false
     @State private var isEdditing = false
-    @State var deck: Deck
+    @State var currentDeck: Deck
+    var deck: Deck
     
     var body: some View {
         
-        let binding = Binding(get: { self.deck}, set: { self.deck = $0 })
+        let binding = Binding(get: { self.currentDeck}, set: { self.currentDeck = $0 })
         
         ZStack(alignment: .center) {
             VStack {
                 HStack {
-                    Text(deck.title)
+                    Text(currentDeck.title)
                         .font(.largeTitle)
                         .bold()
                         .lineLimit(1)
@@ -33,9 +34,9 @@ struct DeckView: View {
                     }
                 }
                 
-//                NavigationLink(destination: DeckRevisionView(deck: deck, sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")])) {
-//                    Text("Test wiedzy")
-//                }
+                NavigationLink(destination: DeckRevisionView(deck: deck, sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")])) {
+                    Text("Test wiedzy")
+                }
                 
                 if (deck.flashcards.isEmpty) {
                     Button {
@@ -62,7 +63,7 @@ struct DeckView: View {
             Text("Dodaj")
         }))
         .sheet(isPresented: $isAdding) {
-            AddFlashcardView(isAdding: $isAdding, deck: deck)
+            AddFlashcardView(isAdding: $isAdding, deck: currentDeck)
         }
         .sheet(isPresented: $isEdditing, content: {
             EditDeckView(isEditing: $isEdditing, deck: binding)
@@ -73,6 +74,6 @@ struct DeckView: View {
 
 struct DeckView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckView(deck: Deck.mockDecks[0])
+        DeckView(currentDeck: Deck.mockDecks[0], deck: Deck.mockDecks[0])
     }
 }

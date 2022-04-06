@@ -14,7 +14,7 @@ struct DeckList: View {
         VStack {            
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 ForEach(decks) { deck in
-                    NavigationLink(destination: DeckView(deck: deck)) {
+                    NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
                         DeckCard(deck: deck)
                     }
                 }
