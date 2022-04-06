@@ -10,9 +10,11 @@ import SwiftUI
 struct DeckRevisionView: View {
     @EnvironmentObject var store: DecksDataStore
     @State private var isFlipped = false
+    @State private var isTextHidden = false
     @State private var currentFlashcard = 0
     var deck: Deck
     var sortedFlashcards: [Flashcard]
+    
     
     var body: some View {
         VStack {
@@ -22,9 +24,16 @@ struct DeckRevisionView: View {
             Spacer()
             
             ZStack {
-                Card()
-                Text(isFlipped ? sortedFlashcards[currentFlashcard].foregroundText : sortedFlashcards[currentFlashcard].backgroundText)
+                ZStack {
+                    Card(axis: (0,1,0), isFlipped: isFlipped)
+//                        .animation(.linear(duration: 2.0))
+                }
+                
+                if !isTextHidden {
+                    Text(isFlipped ? sortedFlashcards[currentFlashcard].foregroundText : sortedFlashcards[currentFlashcard].backgroundText)
+                }
             }
+            .animation(.linear(duration: 1.5))
             
             HStack {
                 Button {
@@ -37,13 +46,17 @@ struct DeckRevisionView: View {
                     
                 } label: {
                     Image(systemName: "plus.circle")
-                        .rotationEffect(.degrees(310))
+                        .rotationEffect(.degrees(315))
                 }
             }
             .opacity(isFlipped ? 1 : 0)
             
             Button {
                 moveToTheNextFlashcard()
+                isTextHidden = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    isTextHidden = false
+                }
             } label: {
                 Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
             }
