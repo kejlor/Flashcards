@@ -54,6 +54,6 @@ struct FlashcardView: View {
 
 struct FlashcardView_Previews: PreviewProvider {
     static var previews: some View {
-        FlashcardView(flashcard: Flashcard(foregroundText: "Dog", backgroundText: "Pies"), deck: Deck.mockDecks[0])
+        FlashcardView(flashcard: Flashcard(foregroundText: "Dog", backgroundText: "Pies", wrongAnswer: 0), deck: Deck.mockDecks[0])
     }
 }

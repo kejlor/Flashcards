@@ -27,16 +27,16 @@ extension Deck {
             Deck(
                 title: "Angielski",
                 flashcards: [
-                    Flashcard(foregroundText: "Apple", backgroundText: "Jabłko"),
-                    Flashcard(foregroundText: "Car", backgroundText: "Samochód"),
-                    Flashcard(foregroundText: "Football", backgroundText: "Piłka nożna")
+                    Flashcard(foregroundText: "Apple", backgroundText: "Jabłko", wrongAnswer: 0),
+                    Flashcard(foregroundText: "Car", backgroundText: "Samochód", wrongAnswer: 1),
+                    Flashcard(foregroundText: "Football", backgroundText: "Piłka nożna", wrongAnswer: 2)
                 ]),
             Deck(
                 title: "Niemiecki",
                 flashcards: [
-                    Flashcard(foregroundText: "Hund", backgroundText: "Pies"),
-                    Flashcard(foregroundText: "Katzen", backgroundText: "Koty"),
-                    Flashcard(foregroundText: "Zeit", backgroundText: "Czas")
+                    Flashcard(foregroundText: "Hund", backgroundText: "Pies", wrongAnswer: 2),
+                    Flashcard(foregroundText: "Katzen", backgroundText: "Koty", wrongAnswer: 3),
+                    Flashcard(foregroundText: "Zeit", backgroundText: "Czas", wrongAnswer: 0)
                 ])
         ]
     }

@@ -31,6 +31,6 @@ struct FlashcardCard: View {
 
 struct FlashcardCard_Previews: PreviewProvider {
     static var previews: some View {
-        FlashcardCard(flashcard: Flashcard(foregroundText: "Dog", backgroundText: "Pies"))
+        FlashcardCard(flashcard: Flashcard(foregroundText: "Dog", backgroundText: "Pies", wrongAnswer: 0))
     }
 }

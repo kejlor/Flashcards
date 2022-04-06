@@ -54,7 +54,7 @@ final class DecksDataStore: ObservableObject {
     }
     
     func addMockFlashcard(deck: Deck) {
-        let newFlashcard = Flashcard(foregroundText: "pepe", backgroundText: "zaba")
+        let newFlashcard = Flashcard(foregroundText: "pepe", backgroundText: "zaba", wrongAnswer: 0)
         guard let index = selectedDeckIndex(deck: deck) else { return  }
         
         decks[index].flashcards.append(newFlashcard)
@@ -63,7 +63,7 @@ final class DecksDataStore: ObservableObject {
     }
     
     func addNewFlashcard(deck: Deck, foregroundText: String, backgroundText: String) {
-        let newFlashcard = Flashcard(foregroundText: foregroundText, backgroundText: backgroundText)
+        let newFlashcard = Flashcard(foregroundText: foregroundText, backgroundText: backgroundText, wrongAnswer: 0)
         guard let index = selectedDeckIndex(deck: deck) else { return }
         
         decks[index].flashcards.append(newFlashcard)

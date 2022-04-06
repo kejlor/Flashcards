@@ -33,9 +33,9 @@ struct DeckView: View {
                     }
                 }
                 
-                NavigationLink(destination: DeckRevisionView(deck: deck, sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")])) {
-                    Text("Test wiedzy")
-                }
+//                NavigationLink(destination: DeckRevisionView(deck: deck, sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")])) {
+//                    Text("Test wiedzy")
+//                }
                 
                 if (deck.flashcards.isEmpty) {
                     Button {
