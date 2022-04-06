@@ -81,6 +81,29 @@ final class DecksDataStore: ObservableObject {
         loadDecks()
     }
     
+    func correctFlashcardAnswer(deck: Deck, flashcard: Flashcard) {
+        guard let deckIndex = selectedDeckIndex(deck: deck) else { return }
+        guard let flashcardIndex = selectedFlashcardIndex(deck: deck, flashcard: flashcard) else { return }
+        
+        decks[deckIndex].flashcards[flashcardIndex].wrongAnswer -= 1
+        saveDecks()
+    }
+    
+    func wrongFlashcardAnswer(deck: Deck, flashcard: Flashcard) {
+        guard let deckIndex = selectedDeckIndex(deck: deck) else { return }
+        guard let flashcardIndex = selectedFlashcardIndex(deck: deck, flashcard: flashcard) else { return }
+        
+        decks[deckIndex].flashcards[flashcardIndex].wrongAnswer += 1
+        saveDecks()
+    }
+    
+    func sortFlashcards(deck: Deck) -> [Flashcard]? {
+        guard let deckIndex = selectedDeckIndex(deck: deck) else { return nil }
+        let sortedFlaschards = decks[deckIndex].flashcards.sorted { $0.wrongAnswer > $1.wrongAnswer }
+        
+        return sortedFlaschards
+    }
+    
     func deleteFlashcard(deck: Deck, flashcard: Flashcard) {
         guard let deckIndex = selectedDeckIndex(deck: deck) else { return }
         guard let flashcardIndex = selectedFlashcardIndex(deck: deck, flashcard: flashcard) else { return }

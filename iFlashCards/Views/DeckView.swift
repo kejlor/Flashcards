@@ -23,17 +23,17 @@ struct DeckView: View {
                     Text(deck.title)
                         .font(.largeTitle)
                         .bold()
-                        .multilineTextAlignment(.center)
+                        .lineLimit(1)
                     
                     Button {
                         isEdditing.toggle()
                     } label: {
                         Image(systemName: "pencil")
-                        Text("Edytuj")
+                            .font(.largeTitle)
                     }
                 }
                 
-                NavigationLink(destination: DeckRevisionView(deck: deck, sortedFlashcards: deck.flashcards)) {
+                NavigationLink(destination: DeckRevisionView(deck: deck, sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")])) {
                     Text("Test wiedzy")
                 }
                 
@@ -68,6 +68,7 @@ struct DeckView: View {
             EditDeckView(isEditing: $isEdditing, deck: binding)
         })
         .navigationBarTitleDisplayMode(.inline)
+
     }
 }
 

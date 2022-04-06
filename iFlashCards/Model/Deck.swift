@@ -14,9 +14,11 @@ struct Deck: Identifiable, Codable {
 }
 
 struct Flashcard: Identifiable, Codable, Hashable {
+    
     var id = UUID().uuidString
     var foregroundText: String
     var backgroundText: String
+    var wrongAnswer: Int = 0
 }
 
 extension Deck {

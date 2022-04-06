@@ -14,7 +14,6 @@ struct DeckRevisionView: View {
     var deck: Deck
     var sortedFlashcards: [Flashcard]
     
-    
     var body: some View {
         VStack {
             Text(deck.title)
@@ -26,12 +25,15 @@ struct DeckRevisionView: View {
                 .animation(.linear(duration: 1.0))
             HStack {
                 Button {
-                    
+                    store.correctFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])
+                    moveToTheNextFlashcard()
                 } label: {
                     Image(systemName: "checkmark.circle")
                 }
                 
                 Button {
+                    store.wrongFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])
+                    moveToTheNextFlashcard()
                     
                 } label: {
                     Image(systemName: "plus.circle")
@@ -53,7 +55,6 @@ struct DeckRevisionView: View {
 
 struct DeckRevisionView_Previews: PreviewProvider {
     static var previews: some View {
-        //        zmienic drugi argument
         DeckRevisionView(deck: Deck.mockDecks[0], sortedFlashcards: Deck.mockDecks[0].flashcards)
     }
 }
