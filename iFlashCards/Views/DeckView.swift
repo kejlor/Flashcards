@@ -68,7 +68,6 @@ struct DeckView: View {
             EditDeckView(isEditing: $isEdditing, deck: binding)
         })
         .navigationBarTitleDisplayMode(.inline)
-
     }
 }
 

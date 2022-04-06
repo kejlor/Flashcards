@@ -13,21 +13,23 @@ struct AddDeckView: View {
     @State private var deckTitle = ""
     
     var body: some View {
-                VStack {
-                    HStack {
-                        Text("Tytuł talii")
-                        TextField("Wprowadź tytuł talii", text: $deckTitle)
-                    }
-                    
-                    Spacer()
-                    
-                    Button {
-                        store.createDeck(title: deckTitle, flashcards: [Flashcard]())
-                    } label: {
-                        Text("Dodaj talie")
-                    }
-                    .disabled(deckTitle.isEmpty)
-                }
+        VStack {
+            HStack {
+                Text("Tytuł talii")
+                TextField("Wprowadź tytuł talii", text: $deckTitle)
+            }
+            
+            Spacer()
+            
+            
+            Button {
+                store.createDeck(title: deckTitle, flashcards: [Flashcard]())
+            } label: {
+                Text("Dodaj talie")
+            }
+            .disabled(deckTitle.isEmpty)
+            
+        }
     }
 }
 
