@@ -24,6 +24,7 @@ struct AddDeckView: View {
             
             Button {
                 store.createDeck(title: deckTitle, flashcards: [Flashcard]())
+                deckTitle = ""
             } label: {
                 Text("Dodaj talie")
             }
