@@ -13,7 +13,7 @@
 		E94F011327FB673200FE43B1 /* FlashcardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011227FB673200FE43B1 /* FlashcardList.swift */; };
 		E94F011727FB760A00FE43B1 /* EditFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011627FB760A00FE43B1 /* EditFlashcardView.swift */; };
 		E94F011927FB928F00FE43B1 /* DeckRevisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */; };
-		E9719F3527FDCC9200442D45 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9719F3427FDCC9200442D45 /* SearchBar.swift */; };
+		E9719F3827FDD6D200442D45 /* FlashcardRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9719F3727FDD6D200442D45 /* FlashcardRevision.swift */; };
 		E9AC2B2827F9CDDB0030D369 /* iFlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */; };
 		E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B2927F9CDDB0030D369 /* ContentView.swift */; };
 		E9AC2B2C27F9CDDC0030D369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AC2B2B27F9CDDC0030D369 /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 		E94F011227FB673200FE43B1 /* FlashcardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardList.swift; sourceTree = "<group>"; };
 		E94F011627FB760A00FE43B1 /* EditFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardView.swift; sourceTree = "<group>"; };
 		E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRevisionView.swift; sourceTree = "<group>"; };
-		E9719F3427FDCC9200442D45 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E9719F3727FDD6D200442D45 /* FlashcardRevision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardRevision.swift; sourceTree = "<group>"; };
 		E9AC2B2427F9CDDB0030D369 /* iFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlashCardsApp.swift; sourceTree = "<group>"; };
 		E9AC2B2927F9CDDB0030D369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				E9AC2B4B27F9D4C20030D369 /* DeckList.swift */,
 				E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */,
 				E94F011227FB673200FE43B1 /* FlashcardList.swift */,
-				E9719F3427FDCC9200442D45 /* SearchBar.swift */,
+				E9719F3727FDD6D200442D45 /* FlashcardRevision.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -229,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E94F011327FB673200FE43B1 /* FlashcardList.swift in Sources */,
+				E9719F3827FDD6D200442D45 /* FlashcardRevision.swift in Sources */,
 				E9AC2B4027F9CEE90030D369 /* FileManager+Ext.swift in Sources */,
 				E9AC2B5827F9F74C0030D369 /* FlashcardView.swift in Sources */,
 				E9AC2B4E27F9D5F10030D369 /* DecksDataStore.swift in Sources */,
@@ -243,7 +244,6 @@
 				E94F011727FB760A00FE43B1 /* EditFlashcardView.swift in Sources */,
 				E9AC2B5627F9F7430030D369 /* AddDeckView.swift in Sources */,
 				E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */,
-				E9719F3527FDCC9200442D45 /* SearchBar.swift in Sources */,
 				E94F011927FB928F00FE43B1 /* DeckRevisionView.swift in Sources */,
 				E9AC2B5027F9E04C0030D369 /* HomeView.swift in Sources */,
 				E9AC2B2827F9CDDB0030D369 /* iFlashCardsApp.swift in Sources */,

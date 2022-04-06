@@ -10,7 +10,6 @@ import SwiftUI
 struct DeckRevisionView: View {
     @EnvironmentObject var store: DecksDataStore
     @State private var isFlipped = false
-    @State private var isTextHidden = false
     @State private var currentFlashcard = 0
     var deck: Deck
     var sortedFlashcards: [Flashcard]
@@ -23,25 +22,15 @@ struct DeckRevisionView: View {
             
             Spacer()
             
-            ZStack {
-                ZStack {
-                    Card(axis: (0,1,0), isFlipped: isFlipped)
-//                        .animation(.linear(duration: 2.0))
-                }
-                
-                if !isTextHidden {
-                    Text(isFlipped ? sortedFlashcards[currentFlashcard].foregroundText : sortedFlashcards[currentFlashcard].backgroundText)
-                }
-            }
-            .animation(.linear(duration: 1.5))
-            
+            FlashcardRevision(axis: (0,0,1), isFlipped: isFlipped, flashcard: sortedFlashcards[currentFlashcard])
+                .animation(.linear(duration: 1.0))
             HStack {
                 Button {
                     
                 } label: {
                     Image(systemName: "checkmark.circle")
                 }
-
+                
                 Button {
                     
                 } label: {
@@ -53,14 +42,10 @@ struct DeckRevisionView: View {
             
             Button {
                 moveToTheNextFlashcard()
-                isTextHidden = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    isTextHidden = false
-                }
             } label: {
                 Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
             }
-
+            
             Spacer()
         }
     }
@@ -68,7 +53,7 @@ struct DeckRevisionView: View {
 
 struct DeckRevisionView_Previews: PreviewProvider {
     static var previews: some View {
-//        zmienic drugi argument
+        //        zmienic drugi argument
         DeckRevisionView(deck: Deck.mockDecks[0], sortedFlashcards: Deck.mockDecks[0].flashcards)
     }
 }

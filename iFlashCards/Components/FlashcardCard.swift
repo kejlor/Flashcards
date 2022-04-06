@@ -12,7 +12,7 @@ struct FlashcardCard: View {
     
     var body: some View {
         ZStack {
-            Card(isFlipped: false)
+            Card()
             
             VStack {
                 Text(flashcard.foregroundText)

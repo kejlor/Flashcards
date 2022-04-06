@@ -12,7 +12,7 @@ struct DeckCard: View {
     
     var body: some View {
         ZStack {
-            Card(isFlipped: false)
+            Card()
             
             VStack {
                 Text(deck.title)
