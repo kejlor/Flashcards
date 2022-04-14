@@ -14,13 +14,16 @@ struct AddDeckView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Tytuł talii")
-                TextField("Wprowadź tytuł talii", text: $deckTitle)
-            }
-            
             Spacer()
             
+            HStack {
+                Text("Tytuł talii:")
+                TextField("Wprowadź tytuł talii", text: $deckTitle)
+                    .multilineTextAlignment(.center)
+            }
+            .padding()
+            
+            Spacer()
             
             Button {
                 store.createDeck(title: deckTitle, flashcards: [Flashcard]())
@@ -30,6 +33,7 @@ struct AddDeckView: View {
             }
             .disabled(deckTitle.isEmpty)
             
+            Spacer()
         }
     }
 }

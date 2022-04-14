@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var store: DecksDataStore
+    @State private var text = ""
     
     // do przerobienia
     var body: some View {
@@ -25,7 +26,10 @@ struct HomeView: View {
                         .foregroundColor(.white)
                     }
                 }
-                //                .background(Color("Background"))
+                .searchable(text: $text, prompt: "Wyszukaj talie")
+                .onSubmit(of: .search) {
+                    store.filteredDecks(for: text)
+                }
             }
             .navigationViewStyle(.stack)
             .foregroundColor(.black)

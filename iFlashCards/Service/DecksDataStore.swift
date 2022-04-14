@@ -9,6 +9,7 @@ import Foundation
 
 final class DecksDataStore: ObservableObject {
     @Published var decks = [Deck]()
+    @Published public private(set) var filteredDecks: [Deck] = []
     
     init() {
         loadDecks()
@@ -110,6 +111,18 @@ final class DecksDataStore: ObservableObject {
         
         decks[deckIndex].flashcards.remove(at: flashcardIndex)
         saveDecks()
+    }
+    
+    func filteredDecks(for text: String) {
+        filteredDecks = []
+        let searchText = text.lowercased()
+        
+        decks.forEach { deck in
+            let searchContent = deck.title
+            if searchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
+                filteredDecks.append(deck)
+            }
+        }
     }
     
     private func selectedDeckIndex(deck: Deck) -> Int? {

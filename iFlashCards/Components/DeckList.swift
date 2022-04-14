@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct DeckList: View {
+    @Environment(\.isSearching) var isSearching
+    @EnvironmentObject var store: DecksDataStore
     var decks: [Deck]
     
     var body: some View {
-        VStack {            
+        VStack {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                ForEach(decks) { deck in
-                    NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
-                        DeckCard(deck: deck)
+                if isSearching {
+                    if store.filteredDecks.count > 0 {
+                        ForEach(store.filteredDecks) { filteredDeck in
+                            NavigationLink(destination: DeckView(currentDeck: filteredDeck, deck: filteredDeck)) {
+                                DeckCard(deck: filteredDeck)
+                            }
+                        }
+                    }
+                } else {
+                    ForEach(decks) { deck in
+                        NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
+                            DeckCard(deck: deck)
+                        }
                     }
                 }
             }

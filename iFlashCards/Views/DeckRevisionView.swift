@@ -42,21 +42,11 @@ struct DeckRevisionView: View {
             }
             .opacity(isFlipped ? 1 : 0)
             
-            if (currentFlashcard == sortedFlashcards.count - 1 && isFlipped) {
-                NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 100, height: 100)
-                        Text("Skończyłeś powtórkę")
-                    }
-                }
-            } else {
                 Button {
                     moveToTheNextFlashcard()
                 } label: {
                     Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
                 }
-            }
             
             Spacer()
         }
