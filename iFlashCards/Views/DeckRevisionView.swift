@@ -45,11 +45,11 @@ struct DeckRevisionView: View {
                 }
                 .opacity(isFlipped ? 1 : 0)
                 
-                    Button {
-                        moveToTheNextFlashcard()
-                    } label: {
-                        Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
-                    }
+                Button {
+                    moveToTheNextFlashcard()
+                } label: {
+                    Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
+                }
                 
                 Spacer()
             }
@@ -80,6 +80,7 @@ extension DeckRevisionView {
     
     func checkAmount() {
         if currentFlashcard == sortedFlashcards.count - 1 && isFlipped {
+            store.saveDecks()
             showAlert = true
         }
     }

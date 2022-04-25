@@ -17,8 +17,10 @@ struct EditFlashcardView: View {
         VStack {
             Text("Edytuj tekst z przodu")
             TextField("Dodaj tekst z przodu", text: $flashcard.foregroundText)
+                .multilineTextAlignment(.center)
             Text("Edytuj tekst z tyłu")
             TextField("Dodaj tekst z tyłu", text: $flashcard.backgroundText)
+                .multilineTextAlignment(.center)
             
             Button {
                 store.updateFlashcard(deck: deck, flashcard: flashcard, foregroundText: flashcard.foregroundText, backgroundText: flashcard.backgroundText)
@@ -26,7 +28,7 @@ struct EditFlashcardView: View {
             } label: {
                 Text("Zapisz zmiany")
             }
-
+            
         }
     }
 }

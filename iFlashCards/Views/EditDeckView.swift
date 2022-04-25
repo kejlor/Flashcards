@@ -11,10 +11,12 @@ struct EditDeckView: View {
     @EnvironmentObject var store: DecksDataStore
     @Binding var isEditing: Bool
     @Binding var deck: Deck
+    
     var body: some View {
         VStack {
             Text("Edytuj tytuł")
             TextField("Wpisz nazwę tytułu tali", text: $deck.title)
+                .multilineTextAlignment(.center)
             
             Button {
                 store.updateDeck(deck: deck)
@@ -22,7 +24,7 @@ struct EditDeckView: View {
             } label: {
                 Text("Zapisz zmiany")
             }
-
+            
         }
     }
 }

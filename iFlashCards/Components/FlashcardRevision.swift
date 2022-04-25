@@ -13,22 +13,20 @@ struct FlashcardRevision: View {
     var flashcard: Flashcard
     
     var body: some View {
-        
-                ZStack {
-                    Card()
-        
-                    if isFlipped {
-                        Text(flashcard.foregroundText)
-                    } else {
-                        Text(flashcard.backgroundText)
-                            .rotationEffect(Angle(degrees: 180))
-                    }
-                }
-                .rotation3DEffect(Angle.degrees(isFlipped ? 0 : 180), axis: axis)
-                .frame(width: 175, height: 220)
+        ZStack {
+            Card()
+            
+            if isFlipped {
+                Text(flashcard.foregroundText)
+            } else {
+                Text(flashcard.backgroundText)
+                    .rotationEffect(Angle(degrees: 180))
+            }
+        }
+        .rotation3DEffect(Angle.degrees(isFlipped ? 0 : 180), axis: axis)
+        .frame(width: 175, height: 220)
     }
 }
-
 
 struct FlashcardRevision_Previews: PreviewProvider {
     static var previews: some View {
