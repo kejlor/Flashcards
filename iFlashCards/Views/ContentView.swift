@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State var selectedTab = 0
     
     var body: some View {
@@ -26,7 +25,6 @@ struct ContentView: View {
                     }
             }
         }
-//        .background(Color("Gray"))
         .ignoresSafeArea()
     }
 }
