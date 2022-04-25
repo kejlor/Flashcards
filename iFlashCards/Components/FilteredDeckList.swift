@@ -11,17 +11,14 @@ struct FilteredDeckList: View {
     @EnvironmentObject var store: DecksDataStore
     
     var body: some View {
-        VStack {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                ForEach(store.filteredDecks) { deck in
-                    NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
-                        DeckCard(deck: deck)
-                    }
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+            ForEach(store.filteredDecks) { deck in
+                NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
+                    DeckCard(deck: deck)
                 }
             }
-            .padding(.top)
         }
-        .padding(.horizontal)
+        .padding(.top)
     }
 }
 

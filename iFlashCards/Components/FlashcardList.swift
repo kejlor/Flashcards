@@ -12,17 +12,14 @@ struct FlashcardList: View {
     var flashcards: [Flashcard]
     
     var body: some View {
-            VStack {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                    ForEach(flashcards) { flashcard in
-                        NavigationLink(destination: FlashcardView(flashcard: flashcard, deck: deck)) {
-                            FlashcardCard(flashcard: flashcard)
-                        }
-                    }
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+            ForEach(flashcards) { flashcard in
+                NavigationLink(destination: FlashcardView(flashcard: flashcard, deck: deck)) {
+                    FlashcardCard(flashcard: flashcard)
                 }
-                .padding(.top)
             }
-            .padding(.horizontal)
+        }
+        .padding(.top)
     }
 }
 

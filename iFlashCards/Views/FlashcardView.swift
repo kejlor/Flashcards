@@ -8,38 +8,36 @@
 import SwiftUI
 
 struct FlashcardView: View {
-    
     @EnvironmentObject var store: DecksDataStore
     @State var flashcard: Flashcard
     @State private var isEditing = false
     var deck: Deck
     
     var body: some View {
-    
         let binding = Binding(get: { self.flashcard}, set: { self.flashcard = $0 })
         
-            VStack {
-                HStack {
-                    FlashcardCard(flashcard: flashcard)
-                    Button {
-                        isEditing.toggle()
-                    } label: {
-                        VStack {
-                            Image(systemName: "pencil")
-                            Text("Edytuj")
-                        }
-                        .foregroundColor(.black)
-                    }   
-                }
-                
+        VStack {
+            HStack {
+                FlashcardCard(flashcard: flashcard)
                 Button {
-                    store.deleteFlashcard(deck: deck, flashcard: flashcard)
+                    isEditing.toggle()
                 } label: {
-                    Text("Usuń fiszke")
-                        .foregroundColor(.red)
+                    VStack {
+                        Image(systemName: "pencil")
+                        Text("Edytuj")
+                    }
+                    .foregroundColor(.black)
                 }
-
             }
+            
+            Button {
+                store.deleteFlashcard(deck: deck, flashcard: flashcard)
+            } label: {
+                Text("Usuń fiszkę")
+                    .foregroundColor(.red)
+            }
+            
+        }
         .navigationBarItems(trailing: Button(action: {
             isEditing.toggle()
         }, label: {
