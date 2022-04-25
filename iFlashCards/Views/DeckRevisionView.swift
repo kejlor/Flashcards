@@ -13,42 +13,50 @@ struct DeckRevisionView: View {
     @State private var currentFlashcard = 0
     var deck: Deck
     @State var sortedFlashcards: [Flashcard]
+    @State private var showAlert = false
     
     var body: some View {
-        VStack {
-            Text(deck.title)
-                .font(.title)
-            
-            Spacer()
-            
-            FlashcardRevision(axis: (0,0,1), isFlipped: isFlipped, flashcard: sortedFlashcards[currentFlashcard])
-                .animation(.linear(duration: 1.0))
-            HStack {
-                Button {
-                    store.correctFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])
-                    moveToTheNextFlashcard()
-                } label: {
-                    Image(systemName: "checkmark.circle")
-                }
+        ZStack {
+            VStack {
+                Text(deck.title)
+                    .font(.title)
                 
-                Button {
-                    store.wrongFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])
-                    moveToTheNextFlashcard()
+                Spacer()
+                
+                FlashcardRevision(axis: (0,0,1), isFlipped: isFlipped, flashcard: sortedFlashcards[currentFlashcard])
+                    .animation(.linear(duration: 1.0))
+                HStack {
+                    Button {
+                        store.correctFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])
+                        moveToTheNextFlashcard()
+                        checkAmount()
+                    } label: {
+                        Image(systemName: "checkmark.circle")
+                    }
                     
-                } label: {
-                    Image(systemName: "plus.circle")
-                        .rotationEffect(.degrees(315))
+                    Button {
+                        store.wrongFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])
+                        moveToTheNextFlashcard()
+                        checkAmount()
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .rotationEffect(.degrees(315))
+                    }
                 }
+                .opacity(isFlipped ? 1 : 0)
+                
+                    Button {
+                        moveToTheNextFlashcard()
+                    } label: {
+                        Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
+                    }
+                
+                Spacer()
             }
-            .opacity(isFlipped ? 1 : 0)
             
-                Button {
-                    moveToTheNextFlashcard()
-                } label: {
-                    Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
-                }
-            
-            Spacer()
+            if showAlert {
+                RevisionAlertView(isShowingAlert: $showAlert)
+            }
         }
     }
 }
@@ -67,6 +75,12 @@ extension DeckRevisionView {
             isFlipped.toggle()
         } else {
             isFlipped.toggle()
+        }
+    }
+    
+    func checkAmount() {
+        if currentFlashcard == sortedFlashcards.count - 1 && isFlipped {
+            showAlert = true
         }
     }
 }
