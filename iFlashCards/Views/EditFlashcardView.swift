@@ -35,6 +35,6 @@ struct EditFlashcardView: View {
 
 struct EditFlashcardView_Previews: PreviewProvider {
     static var previews: some View {
-        EditFlashcardView(isEditing: .constant(true), flashcard: .constant(Flashcard(foregroundText: "Dog", backgroundText: "Pies", wrongAnswer: 0)), deck: Deck.mockDecks[0])
+        EditFlashcardView(isEditing: .constant(true), flashcard: .constant(Flashcard(foregroundText: "Dog", backgroundText: "Pies", wrongAnswers: 0)), deck: Deck.mockDecks[0])
     }
 }

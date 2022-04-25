@@ -18,7 +18,7 @@ struct Flashcard: Identifiable, Codable, Hashable {
     var id = UUID().uuidString
     var foregroundText: String
     var backgroundText: String
-    var wrongAnswer: Int = 0
+    var wrongAnswers: Int = 0
 }
 
 extension Deck {
@@ -27,16 +27,16 @@ extension Deck {
             Deck(
                 title: "Angielski",
                 flashcards: [
-                    Flashcard(foregroundText: "Apple", backgroundText: "Jabłko", wrongAnswer: 0),
-                    Flashcard(foregroundText: "Car", backgroundText: "Samochód", wrongAnswer: 1),
-                    Flashcard(foregroundText: "Football", backgroundText: "Piłka nożna", wrongAnswer: 2)
+                    Flashcard(foregroundText: "Apple", backgroundText: "Jabłko", wrongAnswers: 0),
+                    Flashcard(foregroundText: "Car", backgroundText: "Samochód", wrongAnswers: 1),
+                    Flashcard(foregroundText: "Football", backgroundText: "Piłka nożna", wrongAnswers: 2)
                 ]),
             Deck(
                 title: "Niemiecki",
                 flashcards: [
-                    Flashcard(foregroundText: "Hund", backgroundText: "Pies", wrongAnswer: 2),
-                    Flashcard(foregroundText: "Katzen", backgroundText: "Koty", wrongAnswer: 3),
-                    Flashcard(foregroundText: "Zeit", backgroundText: "Czas", wrongAnswer: 0)
+                    Flashcard(foregroundText: "Hund", backgroundText: "Pies", wrongAnswers: 2),
+                    Flashcard(foregroundText: "Katzen", backgroundText: "Koty", wrongAnswers: 3),
+                    Flashcard(foregroundText: "Zeit", backgroundText: "Czas", wrongAnswers: 0)
                 ])
         ]
     }

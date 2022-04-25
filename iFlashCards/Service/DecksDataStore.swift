@@ -55,7 +55,7 @@ final class DecksDataStore: ObservableObject {
     }
     
     func addMockFlashcard(deck: Deck) {
-        let newFlashcard = Flashcard(foregroundText: "pepe", backgroundText: "zaba", wrongAnswer: 0)
+        let newFlashcard = Flashcard(foregroundText: "Frog", backgroundText: "Żaba", wrongAnswers: 0)
         guard let index = selectedDeckIndex(deck: deck) else { return  }
         
         decks[index].flashcards.append(newFlashcard)
@@ -64,7 +64,7 @@ final class DecksDataStore: ObservableObject {
     }
     
     func addNewFlashcard(deck: Deck, foregroundText: String, backgroundText: String) {
-        let newFlashcard = Flashcard(foregroundText: foregroundText, backgroundText: backgroundText, wrongAnswer: 0)
+        let newFlashcard = Flashcard(foregroundText: foregroundText, backgroundText: backgroundText, wrongAnswers: 0)
         guard let index = selectedDeckIndex(deck: deck) else { return }
         
         decks[index].flashcards.append(newFlashcard)
@@ -86,7 +86,7 @@ final class DecksDataStore: ObservableObject {
         guard let deckIndex = selectedDeckIndex(deck: deck) else { return }
         guard let flashcardIndex = selectedFlashcardIndex(deck: deck, flashcard: flashcard) else { return }
         
-        decks[deckIndex].flashcards[flashcardIndex].wrongAnswer -= 1
+        decks[deckIndex].flashcards[flashcardIndex].wrongAnswers -= 1
         saveDecks()
     }
     
@@ -94,13 +94,13 @@ final class DecksDataStore: ObservableObject {
         guard let deckIndex = selectedDeckIndex(deck: deck) else { return }
         guard let flashcardIndex = selectedFlashcardIndex(deck: deck, flashcard: flashcard) else { return }
         
-        decks[deckIndex].flashcards[flashcardIndex].wrongAnswer += 1
+        decks[deckIndex].flashcards[flashcardIndex].wrongAnswers += 1
         saveDecks()
     }
     
     func sortFlashcards(deck: Deck) -> [Flashcard]? {
         guard let deckIndex = selectedDeckIndex(deck: deck) else { return nil }
-        let sortedFlaschards = decks[deckIndex].flashcards.sorted { $0.wrongAnswer > $1.wrongAnswer }
+        let sortedFlaschards = decks[deckIndex].flashcards.sorted { $0.wrongAnswers > $1.wrongAnswers }
         
         return sortedFlaschards
     }
