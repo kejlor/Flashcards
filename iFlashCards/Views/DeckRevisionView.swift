@@ -32,6 +32,8 @@ struct DeckRevisionView: View {
                         checkAmount()
                     } label: {
                         Image(systemName: "checkmark.circle")
+                            .font(.system(size: 45))
+                            .foregroundColor(Color.green)
                     }
                     
                     Button {
@@ -40,6 +42,8 @@ struct DeckRevisionView: View {
                         checkAmount()
                     } label: {
                         Image(systemName: "plus.circle")
+                            .font(.system(size: 45))
+                            .foregroundColor(Color.red)
                             .rotationEffect(.degrees(315))
                     }
                 }
