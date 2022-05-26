@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DeckView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @State private var isAdding = false
     @State private var isEdditing = false
@@ -31,12 +32,14 @@ struct DeckView: View {
                         isEdditing.toggle()
                     } label: {
                         Image(systemName: "pencil")
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
                             .font(.largeTitle)
                     }
                 }
                 
-                NavigationLink(destination: DeckRevisionView(deck: deck, sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")])) {
+                NavigationLink(destination: DeckRevisionView(sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")], deck: deck)) {
                     Text("Test wiedzy")
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                 }
                 
                 if (deck.flashcards.isEmpty) {
@@ -44,6 +47,7 @@ struct DeckView: View {
                         isAdding.toggle()
                     } label: {
                         Text("Dodaj fiszke")
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
                     }
                 } else {
                     ScrollView {
@@ -59,6 +63,13 @@ struct DeckView: View {
                     store.deleteDeck(deck: deck)
                 } label: {
                     Text("Usuń talie")
+                        .fontWeight(.semibold)
+                        .foregroundColor(colorScheme == .dark ? .black : .white)
+                        .padding()
+                        .padding(.horizontal, 20)
+                        .background(
+                            colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
+                        )
                 }
             }
         }
@@ -66,6 +77,7 @@ struct DeckView: View {
             isAdding.toggle()
         }, label: {
             Text("Dodaj")
+                .foregroundColor(colorScheme == .dark ? .white : .black)
         }))
         .sheet(isPresented: $isAdding) {
             AddFlashcardView(isAdding: $isAdding, deck: currentDeck)

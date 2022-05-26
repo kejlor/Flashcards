@@ -34,6 +34,7 @@ struct AddFlashcardView: View {
                 isAdding.toggle()
             } label: {
                 Text("Dodaj fiszke")
+
             }
             
             Spacer()

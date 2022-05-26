@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct DeckRevisionView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @State private var isFlipped = false
     @State private var currentFlashcard = 0
-    var deck: Deck
     @State var sortedFlashcards: [Flashcard]
     @State private var showAlert = false
+    var deck: Deck
     
     var body: some View {
         ZStack {
@@ -24,7 +25,7 @@ struct DeckRevisionView: View {
                 Spacer()
                 
                 FlashcardRevision(axis: (0,0,1), isFlipped: isFlipped, flashcard: sortedFlashcards[currentFlashcard])
-                    .animation( .linear(duration: 1.0))
+                    .animation(.linear(duration: 1.0))
                 HStack {
                     Button {
                         store.correctFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])
@@ -53,6 +54,7 @@ struct DeckRevisionView: View {
                     moveToTheNextFlashcard()
                 } label: {
                     Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                 }
                 
                 Spacer()
@@ -68,7 +70,7 @@ struct DeckRevisionView: View {
 
 struct DeckRevisionView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckRevisionView(deck: Deck.mockDecks[0], sortedFlashcards: Deck.mockDecks[0].flashcards)
+        DeckRevisionView(sortedFlashcards: Deck.mockDecks[0].flashcards, deck: Deck.mockDecks[0])
     }
 }
 

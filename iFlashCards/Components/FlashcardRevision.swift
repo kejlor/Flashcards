@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FlashcardRevision: View {
+    @Environment(\.colorScheme) var colorScheme
     var axis:(CGFloat,CGFloat,CGFloat) = (1.0,0.0,0.0)
     var isFlipped: Bool
     var flashcard: Flashcard
@@ -28,6 +29,7 @@ struct FlashcardRevision: View {
                                 .rotationEffect(Angle(degrees: 180))
                         }
                     }
+                    .foregroundColor(Color.black)
                     .padding()
                     .padding(.horizontal)
                     

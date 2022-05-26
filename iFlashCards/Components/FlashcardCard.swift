@@ -23,6 +23,7 @@ struct FlashcardCard: View {
                 Text(flashcard.backgroundText)
                     .padding()
             }
+            .foregroundColor(.black)
             .padding()
         }
         .frame(width: 180)

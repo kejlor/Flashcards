@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FlashcardView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @State var flashcard: Flashcard
     @State private var isEditing = false
@@ -26,7 +27,7 @@ struct FlashcardView: View {
                         Image(systemName: "pencil")
                         Text("Edytuj")
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 }
             }
             
@@ -34,7 +35,11 @@ struct FlashcardView: View {
                 store.deleteFlashcard(deck: deck, flashcard: flashcard)
             } label: {
                 Text("Usuń fiszkę")
-                    .foregroundColor(.red)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding()
+                    .padding(.horizontal, 20)
+                    .background(.red)
             }
             
         }
@@ -42,6 +47,7 @@ struct FlashcardView: View {
             isEditing.toggle()
         }, label: {
             Text("Dodaj".uppercased())
+                .foregroundColor(colorScheme == .dark ? .white : .black)
         }))
         .sheet(isPresented: $isEditing) {
             EditFlashcardView(isEditing: $isEditing, flashcard: binding, deck: deck)

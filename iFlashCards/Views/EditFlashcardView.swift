@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditFlashcardView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @Binding var isEditing: Bool
     @Binding var flashcard: Flashcard
@@ -15,11 +16,11 @@ struct EditFlashcardView: View {
     
     var body: some View {
         VStack {
-            Text("Edytuj tekst z przodu")
-            TextField("Dodaj tekst z przodu", text: $flashcard.foregroundText)
+            Text("Edytuj tekst pytania")
+            TextField("Dodaj tekst pytania", text: $flashcard.foregroundText)
                 .multilineTextAlignment(.center)
-            Text("Edytuj tekst z tyłu")
-            TextField("Dodaj tekst z tyłu", text: $flashcard.backgroundText)
+            Text("Edytuj tekst odpowiedzi")
+            TextField("Dodaj tekst odpowiedzi", text: $flashcard.backgroundText)
                 .multilineTextAlignment(.center)
             
             Button {
@@ -28,8 +29,9 @@ struct EditFlashcardView: View {
             } label: {
                 Text("Zapisz zmiany")
             }
-            
         }
+        .foregroundColor(colorScheme == .dark ? .white : .black)
+        .font(.largeTitle)
     }
 }
 
