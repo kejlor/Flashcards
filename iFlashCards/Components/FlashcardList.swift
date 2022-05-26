@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct FlashcardList: View {
+    @Environment(\.isSearching) var isSearching
+    @EnvironmentObject var store: DecksDataStore
     var deck: Deck
     var flashcards: [Flashcard]
     
     var body: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-            ForEach(flashcards) { flashcard in
-                NavigationLink(destination: FlashcardView(flashcard: flashcard, deck: deck)) {
-                    FlashcardCard(flashcard: flashcard)
+            if isSearching {
+                if store.filteredFlashcards.count > 0 {
+                    ForEach(store.filteredFlashcards) { filteredFlashcard in
+                        NavigationLink(destination: FlashcardView(flashcard: filteredFlashcard, deck: deck)) {
+                            FlashcardCard(flashcard: filteredFlashcard)
+                        }
+                    }
+                }
+            } else {
+                ForEach(flashcards) { flashcard in
+                    NavigationLink(destination: FlashcardView(flashcard: flashcard, deck: deck)) {
+                        FlashcardCard(flashcard: flashcard)
+                    }
                 }
             }
         }

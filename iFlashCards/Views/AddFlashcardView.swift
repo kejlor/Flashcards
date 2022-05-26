@@ -17,13 +17,14 @@ struct AddFlashcardView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             
-            Text("Tekst z przodu fiszki")
-            TextField("Wprowadź tekst z przodu fiszki", text: $foregroundText)
+            Text("Pytanie")
+            TextField("Wprowadź pytanie", text: $foregroundText)
                 .multilineTextAlignment(.center)
             
-            Text("Tekst z tyłu fiszki")
-            TextField("Wprowadź tekst z tyłu fiszki", text: $backgroundText)
+            Text("Odpowiedź")
+            TextField("Wprowadź odpowiedź", text: $backgroundText)
                 .multilineTextAlignment(.center)
             
             Spacer()
@@ -34,7 +35,10 @@ struct AddFlashcardView: View {
             } label: {
                 Text("Dodaj fiszke")
             }
+            
+            Spacer()
         }
+        .font(.largeTitle)
     }
 }
 

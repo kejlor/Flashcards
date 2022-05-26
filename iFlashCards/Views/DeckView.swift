@@ -12,6 +12,7 @@ struct DeckView: View {
     @State private var isAdding = false
     @State private var isEdditing = false
     @State var currentDeck: Deck
+    @State private var text = ""
     var deck: Deck
     
     var body: some View {
@@ -47,6 +48,10 @@ struct DeckView: View {
                 } else {
                     ScrollView {
                         FlashcardList(deck: deck, flashcards: deck.flashcards)
+                    }
+                    .searchable(text: $text, prompt: "Wyszukaj fiszke")
+                    .onSubmit(of: .search) {
+                        store.filteredFlashcards(flashcards: deck.flashcards, for: text)
                     }
                 }
                 

@@ -10,6 +10,7 @@ import Foundation
 final class DecksDataStore: ObservableObject {
     @Published var decks = [Deck]()
     @Published public private(set) var filteredDecks: [Deck] = []
+    @Published public private(set) var filteredFlashcards: [Flashcard] = []
     
     init() {
         loadDecks()
@@ -121,6 +122,22 @@ final class DecksDataStore: ObservableObject {
             let searchContent = deck.title
             if searchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
                 filteredDecks.append(deck)
+            }
+        }
+    }
+    
+    func filteredFlashcards(flashcards: [Flashcard], for text: String) {
+        filteredFlashcards = []
+        let searchText = text.lowercased()
+        
+        flashcards.forEach { flashcard in
+            let searchContent = flashcard.foregroundText
+            let secondSearchContent = flashcard.backgroundText
+            if searchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
+                filteredFlashcards.append(flashcard)
+            }
+            if secondSearchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
+                filteredFlashcards.append(flashcard)
             }
         }
     }
