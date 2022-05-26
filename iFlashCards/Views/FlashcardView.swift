@@ -39,7 +39,7 @@ struct FlashcardView: View {
                     .foregroundColor(.white)
                     .padding()
                     .padding(.horizontal, 20)
-                    .background(.red)
+                    .background(Color.red.cornerRadius(10))
             }
             
         }

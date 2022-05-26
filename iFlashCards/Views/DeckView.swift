@@ -36,20 +36,36 @@ struct DeckView: View {
                             .font(.largeTitle)
                     }
                 }
-                
-                NavigationLink(destination: DeckRevisionView(sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")], deck: deck)) {
-                    Text("Test wiedzy")
-                        .foregroundColor(colorScheme == .dark ? .white : .black)
-                }
-                
+            
                 if (deck.flashcards.isEmpty) {
+                    Spacer()
+                    
                     Button {
                         isAdding.toggle()
                     } label: {
                         Text("Dodaj fiszke")
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                            .fontWeight(.semibold)
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
+                            .padding()
+                            .padding(.horizontal, 20)
+                            .background(
+                                colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
+                            )
                     }
+                    
+                    Spacer()
                 } else {
+                    NavigationLink(destination: DeckRevisionView(sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")], deck: deck)) {
+                        Text("Test wiedzy")
+                            .fontWeight(.semibold)
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
+                            .padding()
+                            .padding(.horizontal, 20)
+                            .background(
+                                colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
+                            )
+                    }
+                    
                     ScrollView {
                         FlashcardList(deck: deck, flashcards: deck.flashcards)
                     }

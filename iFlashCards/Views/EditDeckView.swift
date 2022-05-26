@@ -15,9 +15,13 @@ struct EditDeckView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
             Text("Edytuj tytuł")
             TextField("Wpisz nazwę tytułu tali", text: $deck.title)
                 .multilineTextAlignment(.center)
+            
+            Spacer()
             
             Button {
                 store.updateDeck(deck: deck)
@@ -32,6 +36,8 @@ struct EditDeckView: View {
                         colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
                     )
             }
+            
+            Spacer()
         }
         .padding()
         .font(.largeTitle)
