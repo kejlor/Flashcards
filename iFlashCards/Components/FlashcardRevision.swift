@@ -14,17 +14,27 @@ struct FlashcardRevision: View {
     
     var body: some View {
         ZStack {
-            Card()
-            
-            if isFlipped {
-                Text(flashcard.foregroundText)
-            } else {
-                Text(flashcard.backgroundText)
-                    .rotationEffect(Angle(degrees: 180))
+            GeometryReader { geometry in
+                ZStack {
+                    CardRevision()
+                    
+                    Group {
+                        if isFlipped {
+                            Text(flashcard.foregroundText)
+                                .multilineTextAlignment(.center)
+                        } else {
+                            Text(flashcard.backgroundText)
+                                .multilineTextAlignment(.center)
+                                .rotationEffect(Angle(degrees: 180))
+                        }
+                    }
+                    .padding()
+                    .padding(.horizontal)
+                    
+                }
+                .rotation3DEffect(Angle.degrees(isFlipped ? 0 : 180), axis: axis)
             }
         }
-        .rotation3DEffect(Angle.degrees(isFlipped ? 0 : 180), axis: axis)
-        .frame(width: 175, height: 220)
     }
 }
 

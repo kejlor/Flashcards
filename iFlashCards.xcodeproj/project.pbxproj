@@ -30,6 +30,7 @@
 		E9AC2B5227F9F7000030D369 /* FlashcardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */; };
 		E9AC2B5627F9F7430030D369 /* AddDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5527F9F7430030D369 /* AddDeckView.swift */; };
 		E9AC2B5827F9F74C0030D369 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */; };
+		E9D0E9FB283FC9EF008FF906 /* CardRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0E9FA283FC9EF008FF906 /* CardRevision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCard.swift; sourceTree = "<group>"; };
 		E9AC2B5527F9F7430030D369 /* AddDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckView.swift; sourceTree = "<group>"; };
 		E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+		E9D0E9FA283FC9EF008FF906 /* CardRevision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRevision.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				E9719F3727FDD6D200442D45 /* FlashcardRevision.swift */,
 				E9AB2A4B2808583600FA32F0 /* FilteredDeckList.swift */,
 				E9734FD92816E08F0093E871 /* RevisionAlertView.swift */,
+				E9D0E9FA283FC9EF008FF906 /* CardRevision.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				E9719F3827FDD6D200442D45 /* FlashcardRevision.swift in Sources */,
 				E9AC2B4027F9CEE90030D369 /* FileManager+Ext.swift in Sources */,
 				E9AC2B5827F9F74C0030D369 /* FlashcardView.swift in Sources */,
+				E9D0E9FB283FC9EF008FF906 /* CardRevision.swift in Sources */,
 				E9AC2B4E27F9D5F10030D369 /* DecksDataStore.swift in Sources */,
 				E9AC2B3E27F9CEC40030D369 /* Deck.swift in Sources */,
 				E94F010D27FB56F000FE43B1 /* Card.swift in Sources */,
