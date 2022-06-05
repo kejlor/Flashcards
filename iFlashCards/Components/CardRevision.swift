@@ -21,7 +21,6 @@ struct CardRevision: View {
             }
         }
         .padding()
-
     }
 }
 

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DeckRevisionView: View {
-    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @State private var isFlipped = false
     @State private var currentFlashcard = 0
@@ -32,7 +31,7 @@ struct DeckRevisionView: View {
                         moveToTheNextFlashcard()
                         checkAmount()
                     } label: {
-                        Image(systemName: "checkmark.circle")
+                        Image(systemName: "checkmark.square")
                             .font(.system(size: 45))
                             .foregroundColor(Color.green)
                     }
@@ -42,10 +41,9 @@ struct DeckRevisionView: View {
                         moveToTheNextFlashcard()
                         checkAmount()
                     } label: {
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "xmark.square")
                             .font(.system(size: 45))
                             .foregroundColor(Color.red)
-                            .rotationEffect(.degrees(315))
                     }
                 }
                 .opacity(isFlipped ? 1 : 0)
@@ -54,7 +52,6 @@ struct DeckRevisionView: View {
                     moveToTheNextFlashcard()
                 } label: {
                     Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
-                        .foregroundColor(colorScheme == .dark ? .white : .black)
                 }
                 
                 Spacer()

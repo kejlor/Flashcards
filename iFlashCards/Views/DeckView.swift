@@ -32,11 +32,10 @@ struct DeckView: View {
                         isEdditing.toggle()
                     } label: {
                         Image(systemName: "pencil")
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
                             .font(.largeTitle)
                     }
                 }
-            
+                
                 if (deck.flashcards.isEmpty) {
                     Spacer()
                     
@@ -45,7 +44,6 @@ struct DeckView: View {
                     } label: {
                         Text("Dodaj fiszke")
                             .fontWeight(.semibold)
-                            .foregroundColor(colorScheme == .dark ? .black : .white)
                             .padding()
                             .padding(.horizontal, 20)
                             .background(
@@ -58,7 +56,6 @@ struct DeckView: View {
                     NavigationLink(destination: DeckRevisionView(sortedFlashcards: store.sortFlashcards(deck: deck) ?? [Flashcard(foregroundText: "empty", backgroundText: "empty")], deck: deck)) {
                         Text("Test wiedzy")
                             .fontWeight(.semibold)
-                            .foregroundColor(colorScheme == .dark ? .black : .white)
                             .padding()
                             .padding(.horizontal, 20)
                             .background(
@@ -80,7 +77,6 @@ struct DeckView: View {
                 } label: {
                     Text("Usuń talie")
                         .fontWeight(.semibold)
-                        .foregroundColor(colorScheme == .dark ? .black : .white)
                         .padding()
                         .padding(.horizontal, 20)
                         .background(
@@ -93,7 +89,6 @@ struct DeckView: View {
             isAdding.toggle()
         }, label: {
             Text("Dodaj")
-                .foregroundColor(colorScheme == .dark ? .white : .black)
         }))
         .sheet(isPresented: $isAdding) {
             AddFlashcardView(isAdding: $isAdding, deck: currentDeck)

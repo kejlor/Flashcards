@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("selectedTab") private var selectedTab = 0
-    
+        
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
@@ -17,6 +17,7 @@ struct ContentView: View {
                     .tag(0)
                     .tabItem {
                         Label("Talie", systemImage: "house")
+                            .font(.largeTitle)
                     }
                 AddDeckView()
                     .tag(1)

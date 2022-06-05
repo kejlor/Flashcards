@@ -22,7 +22,6 @@ struct HomeView: View {
                             DeckList(decks: store.decks)
                         }
                         .navigationTitle("Moje talie")
-//                        .foregroundColor(.white)
                     }
                 }
                 .searchable(text: $text, prompt: "Wyszukaj talie")
@@ -31,7 +30,6 @@ struct HomeView: View {
                 }
             }
             .navigationViewStyle(.stack)
-//            .foregroundColor(.black)
         }
     }
 }

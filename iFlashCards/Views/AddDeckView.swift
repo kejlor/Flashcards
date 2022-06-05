@@ -31,7 +31,6 @@ struct AddDeckView: View {
             } label: {
                 Text("Dodaj talie")
                     .fontWeight(.semibold)
-                    .foregroundColor(colorScheme == .dark ? .black : .white)
                     .padding()
                     .padding(.horizontal, 20)
                     .background(

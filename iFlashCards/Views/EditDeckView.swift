@@ -29,7 +29,6 @@ struct EditDeckView: View {
             } label: {
                 Text("Zapisz zmiany")
                     .fontWeight(.semibold)
-                    .foregroundColor(colorScheme == .dark ? .black : .white)
                     .padding()
                     .padding(.horizontal, 20)
                     .background(

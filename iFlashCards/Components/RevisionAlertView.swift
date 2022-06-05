@@ -14,16 +14,15 @@ struct RevisionAlertView: View {
     var body: some View {
         VStack {
             Text("Udało Ci się ukończyć test")
+                .background(Color.gray)
             
             Button {
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
-                Text("Wróć do domu")
+                Text("Wróć")
                     .frame(width: 200, height: 60)
                     .background(Color.gray)
-                    .foregroundColor(Color.black)
             }
-            
         }
     }
 }

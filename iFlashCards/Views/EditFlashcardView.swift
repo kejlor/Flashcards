@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EditFlashcardView: View {
-    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @Binding var isEditing: Bool
     @Binding var flashcard: Flashcard
@@ -30,7 +29,6 @@ struct EditFlashcardView: View {
                 Text("Zapisz zmiany")
             }
         }
-        .foregroundColor(colorScheme == .dark ? .white : .black)
         .font(.largeTitle)
     }
 }

@@ -32,7 +32,6 @@ struct FlashcardRevision: View {
                     .foregroundColor(Color.black)
                     .padding()
                     .padding(.horizontal)
-                    
                 }
                 .rotation3DEffect(Angle.degrees(isFlipped ? 0 : 180), axis: axis)
             }
