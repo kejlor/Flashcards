@@ -153,6 +153,11 @@ final class DecksDataStore: ObservableObject {
         return index
     }
     
+    func searchedDeckByTitle(title: String) -> Deck? {
+        guard let deck = decks.first(where: { $0.title == title }) else { return nil }
+        return deck
+    }
+    
     private func selectedFlashcardIndex(deck: Deck, flashcard: Flashcard) -> Int? {
         guard let index = deck.flashcards.firstIndex(where: { $0.id == flashcard.id }) else { return nil }
         return index

@@ -8,36 +8,39 @@
 import SwiftUI
 
 struct ExploreDecks: View {
+    @EnvironmentObject var store: DecksDataStore
+    @StateObject private var addDeckVM = AddDeckViewModel()
+    
     @Environment(\.isSearching) var isSearching
     @ObservedObject private var deckListVM = DeckListViewModel()
+    @State private var isAdding = false
     
     var body: some View {
         VStack {
             NavigationView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                    //                if isSearching {
-                    //                    if deckListVM.filteredDecks.count > 0 {
-                    //                        ForEach(deckListVM.filteredDecks) { filteredDeck in
-                    //                            NavigationLink(destination: DeckView(currentDeck: filteredDeck, deck: filteredDeck)) {
-                    //                                DeckCard(deck: filteredDeck)
-                    //                            }
-                    //                        }
-                    //                    }
-                    //                } else {
-                    ForEach(deckListVM.decks, id: \.deckDocumentId) { deck in
-                        NavigationLink(destination: ExploreDeckFlashcards(deckVM: deck)) {
-                            DeckCard(deckVM: deck)
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+                        ForEach(deckListVM.decks, id: \.deckDocumentId) { deck in
+                            NavigationLink(destination: ExploreDeckFlashcards(deckVM: deck)) {
+                                DeckCard(deckVM: deck)
+                            }
                         }
                     }
+                    .onAppear {
+                        deckListVM.getAllDecks()
+                    }
                 }
+                .navigationTitle("Przeglądaj talie")
             }
-            .padding(.top)
+            Button {
+                isAdding.toggle()
+            } label: {
+                Text("dodaj")
+            }
         }
-        .onAppear {
-            deckListVM.getAllDecks()
+        .sheet(isPresented: $isAdding) {
+            ExportDeckView(isAdding: $isAdding)
         }
-        .navigationTitle("Przeglądaj talie")
-        .padding(.horizontal)
     }
 }
 
