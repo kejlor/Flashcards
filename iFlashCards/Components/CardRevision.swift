@@ -13,7 +13,7 @@ struct CardRevision: View {
             GeometryReader { geometry in
                 VStack {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(Color("Gray"))
+                        .fill(Color.gray.opacity(0.17))
                         .frame(width: geometry.size.width,
                                height: geometry.size.height)
                 }

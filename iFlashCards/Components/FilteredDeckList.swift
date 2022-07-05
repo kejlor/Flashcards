@@ -14,7 +14,7 @@ struct FilteredDeckList: View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
             ForEach(store.filteredDecks) { deck in
                 NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
-                    DeckCard(deck: deck)
+                    DeckCard(deckVM: DeckViewModel(deck: deck))
                 }
             }
         }

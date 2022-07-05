@@ -24,6 +24,11 @@ struct ContentView: View {
                     .tabItem {
                         Label("Dodaj talie", systemImage: "plus")
                     }
+                ExploreDecks()
+                    .tag(2)
+                    .tabItem {
+                        Label("Przeszukaj bazę", systemImage: "doc.text.magnifyingglass")
+                    }
             }
         }
         .ignoresSafeArea()

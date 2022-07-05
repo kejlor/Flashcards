@@ -29,6 +29,9 @@ struct HomeView: View {
                     store.filteredDecks(for: text)
                 }
             }
+            .onAppear {
+                store.loadDecks()
+            }
             .navigationViewStyle(.stack)
         }
     }

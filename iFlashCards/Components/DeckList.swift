@@ -19,14 +19,14 @@ struct DeckList: View {
                     if store.filteredDecks.count > 0 {
                         ForEach(store.filteredDecks) { filteredDeck in
                             NavigationLink(destination: DeckView(currentDeck: filteredDeck, deck: filteredDeck)) {
-                                DeckCard(deck: filteredDeck)
+                                DeckCard(deckVM: DeckViewModel(deck: filteredDeck))
                             }
                         }
                     }
                 } else {
                     ForEach(decks) { deck in
                         NavigationLink(destination: DeckView(currentDeck: deck, deck: deck)) {
-                            DeckCard(deck: deck)
+                            DeckCard(deckVM: DeckViewModel(deck: deck))
                         }
                     }
                 }

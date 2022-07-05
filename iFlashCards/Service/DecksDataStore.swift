@@ -8,15 +8,20 @@
 import Foundation
 
 final class DecksDataStore: ObservableObject {
-    @Published var decks = [Deck]()
+    @Published public private(set) var decks: [Deck] = []
     @Published public private(set) var filteredDecks: [Deck] = []
     @Published public private(set) var filteredFlashcards: [Flashcard] = []
+//    @Published var sortOption: SortOption = .alphabeticalReversed
+    
+//    enum SortOption {
+//        case alphabetical, alphabeticalReversed
+//    }
     
     init() {
         loadDecks()
     }
     
-    private func loadDecks() {
+    func loadDecks() {
         do {
             let data = try FileManager().readFile()
             decks = try JSONDecoder().decode([Deck].self, from: data)
@@ -49,19 +54,18 @@ final class DecksDataStore: ObservableObject {
         saveDecks()
     }
     
+//    func updateDocumentId(deck: Deck, documentID: String) {
+//        guard let index = selectedDeckIndex(deck: deck) else { return }
+//        var deck = decks[index]
+//        deck.documentId = documentID
+//        print(deck.documentId)
+//        saveDecks()
+//    }
+    
     func deleteDeck(deck: Deck) {
         guard let index = selectedDeckIndex(deck: deck) else { return }
         decks.remove(at: index)
         saveDecks()
-    }
-    
-    func addMockFlashcard(deck: Deck) {
-        let newFlashcard = Flashcard(foregroundText: "Frog", backgroundText: "Żaba", wrongAnswers: 0)
-        guard let index = selectedDeckIndex(deck: deck) else { return  }
-        
-        decks[index].flashcards.append(newFlashcard)
-        saveDecks()
-        loadDecks()
     }
     
     func addNewFlashcard(deck: Deck, foregroundText: String, backgroundText: String) {
@@ -124,6 +128,7 @@ final class DecksDataStore: ObservableObject {
                 filteredDecks.append(deck)
             }
         }
+//        sortFilteredDecks(sort: sortOption)
     }
     
     func filteredFlashcards(flashcards: [Flashcard], for text: String) {
@@ -140,6 +145,7 @@ final class DecksDataStore: ObservableObject {
                 filteredFlashcards.append(flashcard)
             }
         }
+//        sortFilteredFlashcards(sort: sortOption)
     }
     
     private func selectedDeckIndex(deck: Deck) -> Int? {
@@ -151,4 +157,22 @@ final class DecksDataStore: ObservableObject {
         guard let index = deck.flashcards.firstIndex(where: { $0.id == flashcard.id }) else { return nil }
         return index
     }
+    
+//    private func sortFilteredFlashcards(sort: SortOption) {
+//        switch sort {
+//        case .alphabetical:
+//            filteredFlashcards.sorted { $0.foregroundText < $1.foregroundText }
+//        case .alphabeticalReversed:
+//            filteredFlashcards.sorted { $0.foregroundText > $1.foregroundText }
+//        }
+//    }
+//
+//    private func sortFilteredDecks(sort: SortOption) {
+//        switch sort {
+//        case .alphabetical:
+//            filteredDecks.sorted { $0.title < $1.title }
+//        case .alphabeticalReversed:
+//            filteredDecks.sorted { $0.title > $1.title }
+//        }
+//    }
 }

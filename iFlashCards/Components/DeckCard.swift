@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct DeckCard: View {
-    var deck: Deck
+    var deckVM: DeckViewModel
     
     var body: some View {
         ZStack {
             Card()
             
             VStack {
-                Text(deck.title)
+                Text(deckVM.title)
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding()
                     .lineLimit(1)
                 
-                Text("Ilość fiszek: \(deck.flashcards.count)")
+                Text("Ilość fiszek: \(deckVM.flashcards.count)")
                     .font(.caption)
             }
-            .foregroundColor(.accentColor)
+            .foregroundColor(.primary)
             .multilineTextAlignment(.center)
         }
     }
@@ -32,6 +32,6 @@ struct DeckCard: View {
 
 struct DeckCard_Previews: PreviewProvider {
     static var previews: some View {
-        DeckCard(deck: Deck.mockDecks[0])
+        DeckCard(deckVM: DeckViewModel(deck: Deck.mockDecks[0]))
     }
 }

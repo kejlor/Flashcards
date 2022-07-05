@@ -11,7 +11,7 @@ struct Card: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color("Gray"))
+                .fill(Color.gray.opacity(0.17))
         }
         .frame(width: 175, height: 220)
     }

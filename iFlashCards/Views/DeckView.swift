@@ -17,7 +17,6 @@ struct DeckView: View {
     var deck: Deck
     
     var body: some View {
-        
         let binding = Binding(get: { self.currentDeck}, set: { self.currentDeck = $0 })
         
         ZStack(alignment: .center) {
