@@ -61,14 +61,6 @@ final class DecksDataStore: ObservableObject {
         saveDecks()
     }
     
-//    func updateDocumentId(deck: Deck, documentID: String) {
-//        guard let index = selectedDeckIndex(deck: deck) else { return }
-//        var deck = decks[index]
-//        deck.documentId = documentID
-//        print(deck.documentId)
-//        saveDecks()
-//    }
-    
     func deleteDeck(deck: Deck) {
         guard let index = selectedDeckIndex(deck: deck) else { return }
         decks.remove(at: index)

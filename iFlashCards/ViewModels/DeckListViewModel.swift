@@ -13,10 +13,13 @@ class DeckListViewModel: ObservableObject {
     let db = Firestore.firestore()
     private var firestoreManager: FirestoreManager
     @Published var decks: [DeckViewModel] = []
-    @Published var filteredDecks: [Deck] = []
+    @Published var filteredDecks: [DeckViewModel] = []
     
     init() {
         firestoreManager = FirestoreManager()
+        DispatchQueue.main.async {
+            self.getAllDecks()
+        }
     }
     
     func getAllDecks() {
@@ -43,16 +46,22 @@ class DeckListViewModel: ObservableObject {
             }
     }
     
-//    func filteredDecks(for text: String) {
-//        filteredDecks = []
-//        let searchText = text.lowercased()
-//        
+    func filteredDecks(for text: String) {
+        filteredDecks = []
+        let searchText = text.lowercased()
+        
 //        decks.forEach { deck in
-//            let searchContent = deck.title
+//            let searchContent = deck.deck.title
 //            if searchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
 //                filteredDecks.append(deck)
 //            }
 //        }
-////        sortFilteredDecks(sort: sortOption)
-//    }
+        
+        decks.forEach { deckVM in
+            let searchContent = deckVM.title
+            if searchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
+                filteredDecks.append(deckVM)
+            }
+        }
+    }
 }

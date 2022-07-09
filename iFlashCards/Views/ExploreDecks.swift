@@ -13,23 +13,21 @@ struct ExploreDecks: View {
     @StateObject private var addDeckVM = AddDeckViewModel()
     @ObservedObject private var deckListVM = DeckListViewModel()
     @State private var isAdding = false
+    @State private var text = ""
     
     var body: some View {
         VStack {
             NavigationView {
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                        ForEach(deckListVM.decks, id: \.deckDocumentId) { deck in
-                            NavigationLink(destination: ExploreDeckFlashcards(deckVM: deck)) {
-                                DeckCard(deckVM: deck)
-                            }
-                        }
+                VStack {
+                    ScrollView {
+                        ExploredDeckList()
                     }
-                    .onAppear {
-                        deckListVM.getAllDecks()
+                    .searchable(text: $text, prompt: "Wyszukaj talie")
+                    .onSubmit(of: .search) {
+                        deckListVM.filteredDecks(for: text)
                     }
+                    .navigationTitle("Przeglądaj talie")
                 }
-                .navigationTitle("Przeglądaj talie")
             }
             
             CustomButton(text: "Dodaj") {
