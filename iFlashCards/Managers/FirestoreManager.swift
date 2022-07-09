@@ -69,6 +69,7 @@ class FirestoreManager {
                 }
                 var deck = try? snapshot.data(as: Deck.self)
                 deck!.documentId = ref.documentID
+                deck!.isAdded = true
                 self.store.updateDeck(deck: deck!)
                 completion(.success(deck!))
             }

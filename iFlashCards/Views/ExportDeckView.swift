@@ -16,21 +16,28 @@ struct ExportDeckView: View {
     
     var body: some View {
         VStack {
-            Picker("Wybierz talię do dodania",  selection: $selectedDeck) {
-                ForEach(store.decks, id: \.title) {
-                    Text($0.title)
+            HStack {
+                Text("Wybierz talie: ")
+                    .font(.title)
+                
+                Picker("Wybierz talię do dodania",  selection: $selectedDeck) {
+                    ForEach(store.decks, id: \.title) { deck in
+                        if (!deck.isAdded) {
+                            Text(deck.title)
+                                .font(.title)
+                        }
+                    }
                 }
             }
+
             
             Text("Wybrana talia: \(selectedDeck)")
+                .font(.title)
             
-            Button {
+            CustomButton(text: "Wyeksportuj talie") {
                 addDeckVM.save(deck: store.searchedDeckByTitle(title: selectedDeck)!)
                 isAdding.toggle()
-            } label: {
-                Text("Wyeksportuj talie")
             }
-
         }
     }
 }

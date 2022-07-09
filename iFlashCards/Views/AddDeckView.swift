@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddDeckView: View {
     @Environment(\.presentationMode) var presentationMode
-    @Environment(\.colorScheme) var colorScheme
+//    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @State private var deckTitle = ""
     
@@ -25,18 +25,10 @@ struct AddDeckView: View {
             
             Spacer()
             
-            Button {
+            CustomButton(text: "Dodaj talie", action: {
                 store.createDeck(title: deckTitle, flashcards: [Flashcard]())
                 deckTitle = ""
-            } label: {
-                Text("Dodaj talie")
-                    .fontWeight(.semibold)
-                    .padding()
-                    .padding(.horizontal, 20)
-                    .background(
-                        colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
-                    )
-            }
+            })
             .disabled(deckTitle.isEmpty)
             
             Spacer()

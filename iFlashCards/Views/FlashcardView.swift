@@ -17,6 +17,8 @@ struct FlashcardView: View {
         let binding = Binding(get: { self.flashcard}, set: { self.flashcard = $0 })
         
         VStack {
+            Spacer()
+            
             HStack {
                 FlashcardCard(flashcard: flashcard)
                 Button {
@@ -29,17 +31,11 @@ struct FlashcardView: View {
                 }
             }
             
-            Button {
+            CustomButton(text: "Usuń fiszke") {
                 store.deleteFlashcard(deck: deck, flashcard: flashcard)
-            } label: {
-                Text("Usuń fiszkę")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .padding()
-                    .padding(.horizontal, 20)
-                    .background(Color.red.cornerRadius(10))
             }
             
+            Spacer()
         }
         .navigationBarItems(trailing: Button(action: {
             isEditing.toggle()

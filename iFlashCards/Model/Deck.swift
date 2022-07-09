@@ -8,6 +8,7 @@
 import Foundation
 
 struct Deck: Identifiable, Codable {
+    var isAdded = false
     var documentId = ""
     var id = UUID().uuidString
     var title: String

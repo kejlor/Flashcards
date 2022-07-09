@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EditDeckView: View {
-    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @Binding var isEditing: Bool
     @Binding var deck: Deck
@@ -23,17 +22,9 @@ struct EditDeckView: View {
             
             Spacer()
             
-            Button {
+            CustomButton(text: "Zapisz zmiany") {
                 store.updateDeck(deck: deck)
                 isEditing.toggle()
-            } label: {
-                Text("Zapisz zmiany")
-                    .fontWeight(.semibold)
-                    .padding()
-                    .padding(.horizontal, 20)
-                    .background(
-                        colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
-                    )
             }
             
             Spacer()

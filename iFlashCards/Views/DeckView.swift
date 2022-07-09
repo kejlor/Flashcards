@@ -38,16 +38,8 @@ struct DeckView: View {
                 if (deck.flashcards.isEmpty) {
                     Spacer()
                     
-                    Button {
+                    CustomButton(text: "Dodaj fiszke") {
                         isAdding.toggle()
-                    } label: {
-                        Text("Dodaj fiszke")
-                            .fontWeight(.semibold)
-                            .padding()
-                            .padding(.horizontal, 20)
-                            .background(
-                                colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
-                            )
                     }
                     
                     Spacer()
@@ -71,16 +63,16 @@ struct DeckView: View {
                     }
                 }
                 
-                Button {
-                    store.deleteDeck(deck: deck)
-                } label: {
-                    Text("Usuń talie")
-                        .fontWeight(.semibold)
-                        .padding()
-                        .padding(.horizontal, 20)
-                        .background(
-                            colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
-                        )
+                HStack {
+                    CustomButton(text: "Usuń talie") {
+                        store.deleteDeck(deck: deck)
+                    }
+                    
+                    if (deck.isAdded) {
+                        CustomButton(text: "Aktualizuj") {
+                            
+                        }
+                    }
                 }
             }
         }
