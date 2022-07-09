@@ -16,7 +16,6 @@ struct Deck: Identifiable, Codable {
 }
 
 struct Flashcard: Identifiable, Codable, Hashable {
-    var documentId = ""
     var id = UUID().uuidString
     var foregroundText: String
     var backgroundText: String
@@ -27,14 +26,14 @@ extension Deck {
     static var mockDecks: [Deck] {
         [
             Deck(
-                documentId: "123", title: "Angielski",
+                title: "Angielski",
                 flashcards: [
                     Flashcard(foregroundText: "Apple", backgroundText: "Jabłko", wrongAnswers: 0),
                     Flashcard(foregroundText: "Car", backgroundText: "Samochód", wrongAnswers: 1),
                     Flashcard(foregroundText: "Football", backgroundText: "Piłka nożna", wrongAnswers: 2)
                 ]),
             Deck(
-                documentId: "124", title: "Niemiecki",
+                title: "Niemiecki",
                 flashcards: [
                     Flashcard(foregroundText: "Hund", backgroundText: "Pies", wrongAnswers: 2),
                     Flashcard(foregroundText: "Katzen", backgroundText: "Koty", wrongAnswers: 3),

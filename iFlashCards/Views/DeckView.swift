@@ -10,6 +10,7 @@ import SwiftUI
 struct DeckView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
+    @StateObject private var deckFlashVM = DeckFlashcardViewModel()
     @State private var isAdding = false
     @State private var isEdditing = false
     @State var currentDeck: Deck
@@ -70,7 +71,14 @@ struct DeckView: View {
                     
                     if (deck.isAdded) {
                         CustomButton(text: "Aktualizuj") {
-                            
+//                            for flashcard in deck.flashcards {
+//                                deckFlashVM.addFlashcardToDeck(deckId: deck.documentId, flashcard: flashcard) { error in
+//                                    if let error = error {
+//                                        print(error.localizedDescription)
+//                                    }
+//                                }
+//                            }
+                            deckFlashVM.changeFlashcards(deck: deck)
                         }
                     }
                 }

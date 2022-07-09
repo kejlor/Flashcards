@@ -54,6 +54,13 @@ final class DecksDataStore: ObservableObject {
         saveDecks()
     }
     
+    func setDeckId(deck: Deck, documentId: String) {
+        guard let index = selectedDeckIndex(deck: deck) else { return }
+        decks[index].documentId = documentId
+        decks[index].isAdded = true
+        saveDecks()
+    }
+    
 //    func updateDocumentId(deck: Deck, documentID: String) {
 //        guard let index = selectedDeckIndex(deck: deck) else { return }
 //        var deck = decks[index]

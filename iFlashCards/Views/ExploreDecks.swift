@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ExploreDecks: View {
+    @Environment(\.isSearching) var isSearching
     @EnvironmentObject var store: DecksDataStore
     @StateObject private var addDeckVM = AddDeckViewModel()
-    
-    @Environment(\.isSearching) var isSearching
     @ObservedObject private var deckListVM = DeckListViewModel()
     @State private var isAdding = false
     
@@ -32,10 +31,9 @@ struct ExploreDecks: View {
                 }
                 .navigationTitle("Przeglądaj talie")
             }
-            Button {
+            
+            CustomButton(text: "Dodaj") {
                 isAdding.toggle()
-            } label: {
-                Text("dodaj")
             }
         }
         .sheet(isPresented: $isAdding) {

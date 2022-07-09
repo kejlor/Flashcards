@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExportDeckView: View {
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject private var deckListVM = DeckListViewModel()
     @EnvironmentObject var store: DecksDataStore
     @StateObject private var addDeckVM = AddDeckViewModel()
     @State private var selectedDeck = ""
@@ -22,10 +23,10 @@ struct ExportDeckView: View {
                 
                 Picker("Wybierz talię do dodania",  selection: $selectedDeck) {
                     ForEach(store.decks, id: \.title) { deck in
-                        if (!deck.isAdded) {
+//                        if (!deck.isAdded) {
                             Text(deck.title)
                                 .font(.title)
-                        }
+//                        }
                     }
                 }
             }
@@ -37,7 +38,9 @@ struct ExportDeckView: View {
             CustomButton(text: "Wyeksportuj talie") {
                 addDeckVM.save(deck: store.searchedDeckByTitle(title: selectedDeck)!)
                 isAdding.toggle()
+                deckListVM.getAllDecks()
             }
+            .disabled(selectedDeck == "")
         }
     }
 }
