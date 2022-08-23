@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ExploreDecks: View {
-//    @EnvironmentObject var store: DecksDataStore
-    @Environment(\.isSearching) var isSearching
     @StateObject private var addDeckVM = AddDeckViewModel()
     @ObservedObject private var deckListVM = DeckListViewModel()
     @State private var isAdding = false
@@ -20,15 +18,13 @@ struct ExploreDecks: View {
             NavigationView {
                 VStack {
                     ScrollView {
-                        ExploredDeckList()
+                        ExploredDeckList(filteredDecks: $deckListVM.filteredDecks)
                     }
                     .navigationTitle("Przeglądaj talie")
                 }
                 .searchable(text: $text, prompt: "Wyszukaj talie")
                 .onSubmit(of: .search) {
                     deckListVM.filterDecks(for: text)
-                    print("znaleziono -----------")
-                    print(deckListVM.filteredDecks)
                 }
             }
             
@@ -42,6 +38,7 @@ struct ExploreDecks: View {
         .sheet(isPresented: $isAdding) {
             ExportDeckView(isAdding: $isAdding)
         }
+        .navigationViewStyle(.stack)
     }
 }
 

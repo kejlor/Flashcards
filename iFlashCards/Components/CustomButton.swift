@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CustomButton: View {
-    @Environment(\.colorScheme) var colorScheme
     var text: String
     var action: (() -> Void)
     var body: some View {
@@ -17,9 +16,9 @@ struct CustomButton: View {
                 .fontWeight(.semibold)
                 .padding()
                 .padding(.horizontal, 20)
-                .background(
-                    colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
-                )
+//                .background(
+//                    colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
+//                )
         }
     }
 }

@@ -19,23 +19,23 @@ struct FlashcardView: View {
         VStack {
             Spacer()
             
-            HStack {
-                FlashcardCard(flashcard: flashcard)
-                Button {
-                    isEditing.toggle()
-                } label: {
-                    VStack {
-                        Image(systemName: "pencil")
-                        Text("Edytuj")
-                    }
+            Button {
+                isEditing.toggle()
+            } label: {
+                VStack {
+                    Image(systemName: "pencil")
+                    Text("Edytuj")
                 }
             }
+            
+            FlashcardCard(flashcard: flashcard)
             
             CustomButton(text: "Usuń fiszke") {
                 store.deleteFlashcard(deck: deck, flashcard: flashcard)
             }
             
             Spacer()
+            
         }
         .navigationBarItems(trailing: Button(action: {
             isEditing.toggle()

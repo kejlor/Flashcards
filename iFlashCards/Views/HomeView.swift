@@ -27,7 +27,6 @@ struct HomeView: View {
                 .searchable(text: $text, prompt: "Wyszukaj talie")
                 .onSubmit(of: .search) {
                     store.filteredDecks(for: text)
-                    print(store.filteredDecks)
                 }
             }
             .onAppear {

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DeckView: View {
-    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var store: DecksDataStore
     @StateObject private var deckFlashVM = DeckFlashcardViewModel()
     @State private var isAdding = false
@@ -50,9 +49,6 @@ struct DeckView: View {
                             .fontWeight(.semibold)
                             .padding()
                             .padding(.horizontal, 20)
-                            .background(
-                                colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
-                            )
                     }
                     
                     ScrollView {
@@ -71,13 +67,6 @@ struct DeckView: View {
                     
                     if (deck.isAdded) {
                         CustomButton(text: "Aktualizuj") {
-//                            for flashcard in deck.flashcards {
-//                                deckFlashVM.addFlashcardToDeck(deckId: deck.documentId, flashcard: flashcard) { error in
-//                                    if let error = error {
-//                                        print(error.localizedDescription)
-//                                    }
-//                                }
-//                            }
                             deckFlashVM.changeFlashcards(deck: deck)
                         }
                     }

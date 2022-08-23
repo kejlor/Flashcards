@@ -13,7 +13,7 @@ class DeckListViewModel: ObservableObject {
     let db = Firestore.firestore()
     private var firestoreManager: FirestoreManager
     @Published var decks: [Deck] = []
-    @Published public private(set) var filteredDecks: [Deck] = []
+    @Published public var filteredDecks: [Deck] = []
     
     init() {
         firestoreManager = FirestoreManager()

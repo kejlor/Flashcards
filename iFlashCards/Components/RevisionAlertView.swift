@@ -14,6 +14,7 @@ struct RevisionAlertView: View {
     var body: some View {
         VStack {
             Text("Udało Ci się ukończyć test")
+                .foregroundColor(.blue)
                 .background(Color.gray)
             
             Button {
