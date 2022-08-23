@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90E1991287332B800571C97 /* AddDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E1990287332B800571C97 /* AddDeckViewModel.swift */; };
 		E93A9DD927FCB820004AF28C /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A9DD827FCB820004AF28C /* EditDeckView.swift */; };
 		E94F010D27FB56F000FE43B1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F010C27FB56F000FE43B1 /* Card.swift */; };
 		E94F010F27FB617100FE43B1 /* AddFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */; };
@@ -15,6 +16,12 @@
 		E94F011927FB928F00FE43B1 /* DeckRevisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */; };
 		E9719F3827FDD6D200442D45 /* FlashcardRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9719F3727FDD6D200442D45 /* FlashcardRevision.swift */; };
 		E9734FDA2816E08F0093E871 /* RevisionAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9734FD92816E08F0093E871 /* RevisionAlertView.swift */; };
+		E983CBE828734C69004E0EAC /* ExploreDeckFlashcards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983CBE728734C69004E0EAC /* ExploreDeckFlashcards.swift */; };
+		E983CBEA28734F77004E0EAC /* DownloadDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E983CBE928734F77004E0EAC /* DownloadDeckViewModel.swift */; };
+		E99184572874941B009E3323 /* ExportDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99184562874941B009E3323 /* ExportDeckView.swift */; };
+		E991845928749CCB009E3323 /* ExploredDeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991845828749CCB009E3323 /* ExploredDeckList.swift */; };
+		E991845B2879BEDE009E3323 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991845A2879BEDE009E3323 /* CustomButton.swift */; };
+		E991845D2879D555009E3323 /* DeckFlashcardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991845C2879D555009E3323 /* DeckFlashcardViewModel.swift */; };
 		E9AB2A4C2808583600FA32F0 /* FilteredDeckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB2A4B2808583600FA32F0 /* FilteredDeckList.swift */; };
 		E9AC2B2827F9CDDB0030D369 /* iFlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */; };
 		E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B2927F9CDDB0030D369 /* ContentView.swift */; };
@@ -30,10 +37,19 @@
 		E9AC2B5227F9F7000030D369 /* FlashcardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */; };
 		E9AC2B5627F9F7430030D369 /* AddDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5527F9F7430030D369 /* AddDeckView.swift */; };
 		E9AC2B5827F9F74C0030D369 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */; };
+		E9C20F1D287311EC006B584A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9C20F1C287311EC006B584A /* GoogleService-Info.plist */; };
+		E9C20F20287312A1006B584A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E9C20F1F287312A1006B584A /* FirebaseAnalytics */; };
+		E9C20F22287312A1006B584A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E9C20F21287312A1006B584A /* FirebaseAuth */; };
+		E9C20F24287312A1006B584A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9C20F23287312A1006B584A /* FirebaseFirestoreSwift */; };
+		E9C20F27287315C9006B584A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C20F26287315C8006B584A /* FirestoreManager.swift */; };
 		E9D0E9FB283FC9EF008FF906 /* CardRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0E9FA283FC9EF008FF906 /* CardRevision.swift */; };
+		E9E101C828733AC300A37405 /* DeckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E101C728733AC300A37405 /* DeckListViewModel.swift */; };
+		E9E101CA28733E0200A37405 /* ExploreDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E101C928733E0200A37405 /* ExploreDecks.swift */; };
+		E9E101CC2873455200A37405 /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E101CB2873455200A37405 /* DeckViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E90E1990287332B800571C97 /* AddDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckViewModel.swift; sourceTree = "<group>"; };
 		E93A9DD827FCB820004AF28C /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		E94F010C27FB56F000FE43B1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E94F010E27FB617100FE43B1 /* AddFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlashcardView.swift; sourceTree = "<group>"; };
@@ -42,6 +58,12 @@
 		E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRevisionView.swift; sourceTree = "<group>"; };
 		E9719F3727FDD6D200442D45 /* FlashcardRevision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardRevision.swift; sourceTree = "<group>"; };
 		E9734FD92816E08F0093E871 /* RevisionAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionAlertView.swift; sourceTree = "<group>"; };
+		E983CBE728734C69004E0EAC /* ExploreDeckFlashcards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDeckFlashcards.swift; sourceTree = "<group>"; };
+		E983CBE928734F77004E0EAC /* DownloadDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDeckViewModel.swift; sourceTree = "<group>"; };
+		E99184562874941B009E3323 /* ExportDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDeckView.swift; sourceTree = "<group>"; };
+		E991845828749CCB009E3323 /* ExploredDeckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploredDeckList.swift; sourceTree = "<group>"; };
+		E991845A2879BEDE009E3323 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E991845C2879D555009E3323 /* DeckFlashcardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckFlashcardViewModel.swift; sourceTree = "<group>"; };
 		E9AB2A4B2808583600FA32F0 /* FilteredDeckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredDeckList.swift; sourceTree = "<group>"; };
 		E9AC2B2427F9CDDB0030D369 /* iFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlashCardsApp.swift; sourceTree = "<group>"; };
@@ -58,7 +80,12 @@
 		E9AC2B5127F9F7000030D369 /* FlashcardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCard.swift; sourceTree = "<group>"; };
 		E9AC2B5527F9F7430030D369 /* AddDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckView.swift; sourceTree = "<group>"; };
 		E9AC2B5727F9F74C0030D369 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+		E9C20F1C287311EC006B584A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E9C20F26287315C8006B584A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		E9D0E9FA283FC9EF008FF906 /* CardRevision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRevision.swift; sourceTree = "<group>"; };
+		E9E101C728733AC300A37405 /* DeckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListViewModel.swift; sourceTree = "<group>"; };
+		E9E101C928733E0200A37405 /* ExploreDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDecks.swift; sourceTree = "<group>"; };
+		E9E101CB2873455200A37405 /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +93,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C20F20287312A1006B584A /* FirebaseAnalytics in Frameworks */,
+				E9C20F22287312A1006B584A /* FirebaseAuth in Frameworks */,
+				E9C20F24287312A1006B584A /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90E198F2873326D00571C97 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E9C20F26287315C8006B584A /* FirestoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		E9AC2B1B27F9CDDB0030D369 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +129,9 @@
 		E9AC2B2627F9CDDB0030D369 /* iFlashCards */ = {
 			isa = PBXGroup;
 			children = (
+				E90E198F2873326D00571C97 /* Managers */,
+				E9C20F25287315B2006B584A /* ViewModels */,
+				E9C20F1C287311EC006B584A /* GoogleService-Info.plist */,
 				E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */,
 				E9AC2B3A27F9CE240030D369 /* Model */,
 				E9AC2B3927F9CE150030D369 /* Extensions */,
@@ -123,6 +164,8 @@
 				E9AB2A4B2808583600FA32F0 /* FilteredDeckList.swift */,
 				E9734FD92816E08F0093E871 /* RevisionAlertView.swift */,
 				E9D0E9FA283FC9EF008FF906 /* CardRevision.swift */,
+				E991845828749CCB009E3323 /* ExploredDeckList.swift */,
+				E991845A2879BEDE009E3323 /* CustomButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -147,6 +190,9 @@
 				E94F011627FB760A00FE43B1 /* EditFlashcardView.swift */,
 				E94F011827FB928F00FE43B1 /* DeckRevisionView.swift */,
 				E93A9DD827FCB820004AF28C /* EditDeckView.swift */,
+				E9E101C928733E0200A37405 /* ExploreDecks.swift */,
+				E983CBE728734C69004E0EAC /* ExploreDeckFlashcards.swift */,
+				E99184562874941B009E3323 /* ExportDeckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +213,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E9C20F25287315B2006B584A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E90E1990287332B800571C97 /* AddDeckViewModel.swift */,
+				E9E101C728733AC300A37405 /* DeckListViewModel.swift */,
+				E9E101CB2873455200A37405 /* DeckViewModel.swift */,
+				E983CBE928734F77004E0EAC /* DownloadDeckViewModel.swift */,
+				E991845C2879D555009E3323 /* DeckFlashcardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +241,11 @@
 			dependencies = (
 			);
 			name = iFlashCards;
+			packageProductDependencies = (
+				E9C20F1F287312A1006B584A /* FirebaseAnalytics */,
+				E9C20F21287312A1006B584A /* FirebaseAuth */,
+				E9C20F23287312A1006B584A /* FirebaseFirestoreSwift */,
+			);
 			productName = iFlashCards;
 			productReference = E9AC2B2427F9CDDB0030D369 /* iFlashCards.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +274,9 @@
 				Base,
 			);
 			mainGroup = E9AC2B1B27F9CDDB0030D369;
+			packageReferences = (
+				E9C20F1E287312A1006B584A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E9AC2B2527F9CDDB0030D369 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,6 +293,7 @@
 			files = (
 				E9AC2B2F27F9CDDC0030D369 /* Preview Assets.xcassets in Resources */,
 				E9AC2B2C27F9CDDC0030D369 /* Assets.xcassets in Resources */,
+				E9C20F1D287311EC006B584A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,9 +304,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E991845928749CCB009E3323 /* ExploredDeckList.swift in Sources */,
 				E94F011327FB673200FE43B1 /* FlashcardList.swift in Sources */,
 				E9719F3827FDD6D200442D45 /* FlashcardRevision.swift in Sources */,
+				E9E101CA28733E0200A37405 /* ExploreDecks.swift in Sources */,
+				E991845B2879BEDE009E3323 /* CustomButton.swift in Sources */,
+				E983CBE828734C69004E0EAC /* ExploreDeckFlashcards.swift in Sources */,
 				E9AC2B4027F9CEE90030D369 /* FileManager+Ext.swift in Sources */,
+				E9C20F27287315C9006B584A /* FirestoreManager.swift in Sources */,
 				E9AC2B5827F9F74C0030D369 /* FlashcardView.swift in Sources */,
 				E9D0E9FB283FC9EF008FF906 /* CardRevision.swift in Sources */,
 				E9AC2B4E27F9D5F10030D369 /* DecksDataStore.swift in Sources */,
@@ -250,13 +322,19 @@
 				E94F010F27FB617100FE43B1 /* AddFlashcardView.swift in Sources */,
 				E9AC2B5227F9F7000030D369 /* FlashcardCard.swift in Sources */,
 				E9AB2A4C2808583600FA32F0 /* FilteredDeckList.swift in Sources */,
+				E9E101CC2873455200A37405 /* DeckViewModel.swift in Sources */,
 				E9AC2B4A27F9D4600030D369 /* DeckView.swift in Sources */,
 				E93A9DD927FCB820004AF28C /* EditDeckView.swift in Sources */,
+				E9E101C828733AC300A37405 /* DeckListViewModel.swift in Sources */,
 				E94F011727FB760A00FE43B1 /* EditFlashcardView.swift in Sources */,
 				E9734FDA2816E08F0093E871 /* RevisionAlertView.swift in Sources */,
+				E983CBEA28734F77004E0EAC /* DownloadDeckViewModel.swift in Sources */,
 				E9AC2B5627F9F7430030D369 /* AddDeckView.swift in Sources */,
 				E9AC2B2A27F9CDDB0030D369 /* ContentView.swift in Sources */,
+				E99184572874941B009E3323 /* ExportDeckView.swift in Sources */,
 				E94F011927FB928F00FE43B1 /* DeckRevisionView.swift in Sources */,
+				E991845D2879D555009E3323 /* DeckFlashcardViewModel.swift in Sources */,
+				E90E1991287332B800571C97 /* AddDeckViewModel.swift in Sources */,
 				E9AC2B5027F9E04C0030D369 /* HomeView.swift in Sources */,
 				E9AC2B2827F9CDDB0030D369 /* iFlashCardsApp.swift in Sources */,
 			);
@@ -404,7 +482,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -433,7 +511,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -459,6 +537,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9C20F1E287312A1006B584A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9C20F1F287312A1006B584A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9C20F1E287312A1006B584A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E9C20F21287312A1006B584A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9C20F1E287312A1006B584A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E9C20F23287312A1006B584A /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9C20F1E287312A1006B584A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9AC2B1C27F9CDDB0030D369 /* Project object */;
 }

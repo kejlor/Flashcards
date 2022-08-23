@@ -25,7 +25,6 @@ struct ExploreDeckFlashcards: View {
             CustomButton(text: "Pobierz") {
                 downloadDeckVM.downloadDeck(deckVM: deckVM)
             }
-
         }
     }
 }

@@ -8,30 +8,33 @@
 import SwiftUI
 
 struct ExploredDeckList: View {
-    @Environment(\.isSearching) var isSearching
+    @Environment(\.isSearching) var isSearchingDecks
     @ObservedObject private var deckListVM = DeckListViewModel()
     
     var body: some View {
         VStack {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                if isSearching {
+                if isSearchingDecks {
                     if deckListVM.filteredDecks.count > 0 {
-                        ForEach(deckListVM.filteredDecks, id: \.deckDocumentId) { filteredDeck in
-                            NavigationLink(destination: ExploreDeckFlashcards(deckVM: filteredDeck)) {
-                                DeckCard(deckVM: filteredDeck)
+                        ForEach(deckListVM.filteredDecks) { filteredDeck in
+                            NavigationLink(destination: ExploreDeckFlashcards(deckVM: DeckViewModel(deck: filteredDeck))) {
+                                DeckCard(deckVM: DeckViewModel(deck: filteredDeck))
                             }
                         }
+                        
+//                        ForEach(0..<deckListVM.filteredDecks.count, id: \.self) { num in
+//                            NavigationLink(destination: ExploreDeckFlashcards(deckVM: DeckViewModel(deck: deckListVM.filteredDecks[num]))) {
+//                                DeckCard(deckVM: DeckViewModel(deck: deckListVM.filteredDecks[num]))
+//                            }
+//                        }
                     }
                 } else {
-                    ForEach(deckListVM.decks, id: \.deckDocumentId) { deck in
-                        NavigationLink(destination: ExploreDeckFlashcards(deckVM: deck)) {
-                            DeckCard(deckVM: deck)
+                    ForEach(deckListVM.decks) { deck in
+                        NavigationLink(destination: ExploreDeckFlashcards(deckVM: DeckViewModel(deck: deck))) {
+                            DeckCard(deckVM: DeckViewModel(deck: deck))
                         }
                     }
                 }
-            }
-            .onAppear {
-                deckListVM.getAllDecks()
             }
         }
     }

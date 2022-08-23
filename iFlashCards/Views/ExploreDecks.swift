@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ExploreDecks: View {
+//    @EnvironmentObject var store: DecksDataStore
     @Environment(\.isSearching) var isSearching
-    @EnvironmentObject var store: DecksDataStore
     @StateObject private var addDeckVM = AddDeckViewModel()
     @ObservedObject private var deckListVM = DeckListViewModel()
     @State private var isAdding = false
@@ -22,17 +22,22 @@ struct ExploreDecks: View {
                     ScrollView {
                         ExploredDeckList()
                     }
-                    .searchable(text: $text, prompt: "Wyszukaj talie")
-                    .onSubmit(of: .search) {
-                        deckListVM.filteredDecks(for: text)
-                    }
                     .navigationTitle("Przeglądaj talie")
+                }
+                .searchable(text: $text, prompt: "Wyszukaj talie")
+                .onSubmit(of: .search) {
+                    deckListVM.filterDecks(for: text)
+                    print("znaleziono -----------")
+                    print(deckListVM.filteredDecks)
                 }
             }
             
             CustomButton(text: "Dodaj") {
                 isAdding.toggle()
             }
+        }
+        .onAppear {
+            deckListVM.getAllDecks()
         }
         .sheet(isPresented: $isAdding) {
             ExportDeckView(isAdding: $isAdding)

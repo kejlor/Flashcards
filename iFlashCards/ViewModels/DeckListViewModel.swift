@@ -7,19 +7,17 @@
 
 import Foundation
 import FirebaseFirestore
-import FirebaseFirestoreSwift
+//import FirebaseFirestoreSwift
 
 class DeckListViewModel: ObservableObject {
     let db = Firestore.firestore()
     private var firestoreManager: FirestoreManager
-    @Published var decks: [DeckViewModel] = []
-    @Published var filteredDecks: [DeckViewModel] = []
+    @Published var decks: [Deck] = []
+    @Published public private(set) var filteredDecks: [Deck] = []
     
     init() {
         firestoreManager = FirestoreManager()
-        DispatchQueue.main.async {
-            self.getAllDecks()
-        }
+        getAllDecks()
     }
     
     func getAllDecks() {
@@ -28,15 +26,15 @@ class DeckListViewModel: ObservableObject {
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
-                        if let snapshot = snapshot {
-                            let decks: [DeckViewModel] = snapshot.documents.compactMap { doc in
-                                var deck = try? doc.data(as: Deck.self)
-                                deck?.documentId = doc.documentID
-                                if let deck = deck {
-                                    return DeckViewModel(deck: deck)
-                                }
-                                return nil
+                    if let snapshot = snapshot {
+                        let decks: [Deck] = snapshot.documents.compactMap { doc in
+                            var deck = try? doc.data(as: Deck.self)
+                            deck?.documentId = doc.documentID
+                            if let deck = deck {
+                                return deck
                             }
+                            return nil
+                        }
                         
                         DispatchQueue.main.async {
                             self?.decks = decks
@@ -46,21 +44,15 @@ class DeckListViewModel: ObservableObject {
             }
     }
     
-    func filteredDecks(for text: String) {
+    func filterDecks(for text: String) {
         filteredDecks = []
         let searchText = text.lowercased()
         
-//        decks.forEach { deck in
-//            let searchContent = deck.deck.title
-//            if searchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
-//                filteredDecks.append(deck)
-//            }
-//        }
-        
-        decks.forEach { deckVM in
-            let searchContent = deckVM.title
+        for deck in decks {
+            let searchContent = deck.title
+            
             if searchContent.lowercased().range(of: searchText, options: .regularExpression) != nil {
-                filteredDecks.append(deckVM)
+                filteredDecks.append(deck)
             }
         }
     }

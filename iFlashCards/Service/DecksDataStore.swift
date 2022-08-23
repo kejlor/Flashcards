@@ -127,7 +127,6 @@ final class DecksDataStore: ObservableObject {
                 filteredDecks.append(deck)
             }
         }
-//        sortFilteredDecks(sort: sortOption)
     }
     
     func filteredFlashcards(flashcards: [Flashcard], for text: String) {
@@ -144,7 +143,6 @@ final class DecksDataStore: ObservableObject {
                 filteredFlashcards.append(flashcard)
             }
         }
-//        sortFilteredFlashcards(sort: sortOption)
     }
     
     private func selectedDeckIndex(deck: Deck) -> Int? {
