@@ -16,9 +16,11 @@ struct ExploreDeckFlashcards: View {
             Text(deckVM.title)
                 .font(.title)
             
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                ForEach(deckVM.flashcards) { flashcard in
-                    FlashcardCard(flashcard: flashcard)
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+                    ForEach(deckVM.flashcards) { flashcard in
+                        FlashcardCard(flashcard: flashcard)
+                    }
                 }
             }
             
