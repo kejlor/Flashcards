@@ -33,8 +33,10 @@ struct ExploredDeckList: View {
     }
 }
 
-//struct ExploredDeckList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExploredDeckList()
-//    }
-//}
+struct ExploredDeckList_Previews: PreviewProvider {
+    static var previews: some View {
+        let filteredDeck = DeckListViewModel().filteredDecks
+        
+        ExploredDeckList(filteredDecks: .constant(filteredDeck))
+    }
+}

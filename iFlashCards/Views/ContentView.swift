@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("selectedTab") private var selectedTab = 0
-        
+    
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {

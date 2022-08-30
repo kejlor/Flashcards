@@ -23,12 +23,12 @@ struct ExportDeckView: View {
                 
                 Picker("Wybierz talię do dodania",  selection: $selectedDeck) {
                     ForEach(store.decks, id: \.title) { deck in
-                            Text(deck.title)
-                                .font(.title)
+                        Text(deck.title)
+                            .font(.title)
                     }
                 }
             }
-
+            
             Text("Wybrana talia: \(selectedDeck)")
                 .font(.title)
             
@@ -46,7 +46,7 @@ struct ExportDeckView: View {
                 .buttonStyle(CustomButton())
                 .disabled(selectedDeck == "")
             }
-
+            
         }
     }
 }
