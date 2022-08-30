@@ -24,10 +24,11 @@ struct AddDeckView: View {
             
             Spacer()
             
-            CustomButton(text: "Dodaj talie", action: {
+            Button("Dodaj talie") {
                 store.createDeck(title: deckTitle, flashcards: [Flashcard]())
                 deckTitle = ""
-            })
+            }
+            .buttonStyle(CustomButton())
             .disabled(deckTitle.isEmpty)
             
             Spacer()

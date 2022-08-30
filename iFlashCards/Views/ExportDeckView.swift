@@ -32,11 +32,12 @@ struct ExportDeckView: View {
             Text("Wybrana talia: \(selectedDeck)")
                 .font(.title)
             
-            CustomButton(text: "Wyeksportuj talie") {
+            Button("Wyeksportuj talie") {
                 addDeckVM.save(deck: store.searchedDeckByTitle(title: selectedDeck)!)
                 isAdding.toggle()
                 deckListVM.getAllDecks()
             }
+            .buttonStyle(CustomButton())
             .disabled(selectedDeck == "")
         }
     }

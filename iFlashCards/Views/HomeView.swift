@@ -21,9 +21,10 @@ struct HomeView: View {
                         ScrollView {
                             DeckList(decks: store.decks)
                         }
-                        .navigationTitle("Moje talie")
+                        
                     }
                 }
+                .navigationTitle("Moje talie")
                 .searchable(text: $text, prompt: "Wyszukaj talie")
                 .onSubmit(of: .search) {
                     store.filteredDecks(for: text)

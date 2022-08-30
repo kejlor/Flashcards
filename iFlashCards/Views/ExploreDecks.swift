@@ -28,9 +28,10 @@ struct ExploreDecks: View {
                 }
             }
             
-            CustomButton(text: "Dodaj") {
+            Button("Dodaj") {
                 isAdding.toggle()
             }
+            .buttonStyle(CustomButton())
         }
         .onAppear {
             deckListVM.getAllDecks()

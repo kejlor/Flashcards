@@ -7,26 +7,21 @@
 
 import SwiftUI
 
-struct CustomButton: View {
-    var text: String
-    var action: (() -> Void)
-    var body: some View {
-        Button(action: action) {
-            Text(text)
-                .fontWeight(.semibold)
-                .padding()
-                .padding(.horizontal, 20)
-//                .background(
-//                    colorScheme == .dark ? Color.white.cornerRadius(10).shadow(radius: 10) : Color.black.cornerRadius(10).shadow(radius: 10)
-//                )
-        }
+struct CustomButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(Color(red: 0, green: 0, blue: 0.5))
+            .foregroundColor(.white)
+            .clipShape(Capsule())
     }
 }
 
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButton(text: "Test") {
-            print("test")
+        Button("Przycisk") {
+            print("Button pressed")
         }
+        .buttonStyle(CustomButton())
     }
 }

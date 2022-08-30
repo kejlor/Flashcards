@@ -38,9 +38,10 @@ struct DeckView: View {
                 if (deck.flashcards.isEmpty) {
                     Spacer()
                     
-                    CustomButton(text: "Dodaj fiszke") {
+                    Button("Dodaj fiszke") {
                         isAdding.toggle()
                     }
+                    .buttonStyle(CustomButton())
                     
                     Spacer()
                 } else {
@@ -61,14 +62,16 @@ struct DeckView: View {
                 }
                 
                 HStack {
-                    CustomButton(text: "Usuń talie") {
+                    Button("Usuń talie") {
                         store.deleteDeck(deck: deck)
                     }
+                    .buttonStyle(CustomButton())
                     
                     if (deck.isAdded) {
-                        CustomButton(text: "Aktualizuj") {
+                        Button("Aktualizuj") {
                             deckFlashVM.changeFlashcards(deck: deck)
                         }
+                        .buttonStyle(CustomButton())
                     }
                 }
             }

@@ -22,9 +22,10 @@ struct ExploreDeckFlashcards: View {
                 }
             }
             
-            CustomButton(text: "Pobierz") {
+            Button("Pobierz") {
                 downloadDeckVM.downloadDeck(deckVM: deckVM)
             }
+            .buttonStyle(CustomButton())
         }
     }
 }

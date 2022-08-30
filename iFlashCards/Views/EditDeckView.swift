@@ -22,10 +22,11 @@ struct EditDeckView: View {
             
             Spacer()
             
-            CustomButton(text: "Zapisz zmiany") {
+            Button("Zapisz zmiany") {
                 store.updateDeck(deck: deck)
                 isEditing.toggle()
             }
+            .buttonStyle(CustomButton())
             
             Spacer()
         }

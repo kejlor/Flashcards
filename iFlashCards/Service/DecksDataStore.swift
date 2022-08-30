@@ -11,11 +11,6 @@ final class DecksDataStore: ObservableObject {
     @Published public private(set) var decks: [Deck] = []
     @Published public private(set) var filteredDecks: [Deck] = []
     @Published public private(set) var filteredFlashcards: [Flashcard] = []
-//    @Published var sortOption: SortOption = .alphabeticalReversed
-    
-//    enum SortOption {
-//        case alphabetical, alphabeticalReversed
-//    }
     
     init() {
         loadDecks()
@@ -159,22 +154,4 @@ final class DecksDataStore: ObservableObject {
         guard let index = deck.flashcards.firstIndex(where: { $0.id == flashcard.id }) else { return nil }
         return index
     }
-    
-//    private func sortFilteredFlashcards(sort: SortOption) {
-//        switch sort {
-//        case .alphabetical:
-//            filteredFlashcards.sorted { $0.foregroundText < $1.foregroundText }
-//        case .alphabeticalReversed:
-//            filteredFlashcards.sorted { $0.foregroundText > $1.foregroundText }
-//        }
-//    }
-//
-//    private func sortFilteredDecks(sort: SortOption) {
-//        switch sort {
-//        case .alphabetical:
-//            filteredDecks.sorted { $0.title < $1.title }
-//        case .alphabeticalReversed:
-//            filteredDecks.sorted { $0.title > $1.title }
-//        }
-//    }
 }

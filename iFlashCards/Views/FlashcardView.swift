@@ -30,9 +30,10 @@ struct FlashcardView: View {
             
             FlashcardCard(flashcard: flashcard)
             
-            CustomButton(text: "Usuń fiszke") {
+            Button("Usuń fiszke") {
                 store.deleteFlashcard(deck: deck, flashcard: flashcard)
             }
+            .buttonStyle(CustomButton())
             
             Spacer()
             

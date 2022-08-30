@@ -24,7 +24,7 @@ struct DeckRevisionView: View {
                 Spacer()
                 
                 FlashcardRevision(axis: (0,0,1), isFlipped: isFlipped, flashcard: sortedFlashcards[currentFlashcard])
-                    .animation(.linear(duration: 1.0))
+                    .animation(.linear(duration: 1.0), value: isFlipped)
                 HStack {
                     Button {
                         store.correctFlashcardAnswer(deck: deck, flashcard: sortedFlashcards[currentFlashcard])

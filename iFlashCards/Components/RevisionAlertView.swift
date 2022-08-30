@@ -18,7 +18,7 @@ struct RevisionAlertView: View {
                 .background(Color.gray)
             
             Button {
-                self.presentationMode.wrappedValue.dismiss()
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Wróć")
                     .frame(width: 200, height: 60)
