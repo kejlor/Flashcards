@@ -32,13 +32,21 @@ struct ExportDeckView: View {
             Text("Wybrana talia: \(selectedDeck)")
                 .font(.title)
             
-            Button("Wyeksportuj talie") {
-                addDeckVM.save(deck: store.searchedDeckByTitle(title: selectedDeck)!)
-                isAdding.toggle()
-                deckListVM.getAllDecks()
+            HStack {
+                Button("Anuluj") {
+                    isAdding.toggle()
+                }
+                .buttonStyle(CustomRedButton())
+                
+                Button("Wyeksportuj talie") {
+                    addDeckVM.save(deck: store.searchedDeckByTitle(title: selectedDeck)!)
+                    isAdding.toggle()
+                    deckListVM.getAllDecks()
+                }
+                .buttonStyle(CustomButton())
+                .disabled(selectedDeck == "")
             }
-            .buttonStyle(CustomButton())
-            .disabled(selectedDeck == "")
+
         }
     }
 }

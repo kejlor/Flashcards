@@ -17,6 +17,16 @@ struct CustomButton: ButtonStyle {
     }
 }
 
+struct CustomRedButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(Color(red: 0.5, green: 0, blue: 0))
+            .foregroundColor(.white)
+            .clipShape(Capsule())
+    }
+}
+
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
         Button("Przycisk") {

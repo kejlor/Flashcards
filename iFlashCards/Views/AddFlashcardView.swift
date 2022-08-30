@@ -16,9 +16,7 @@ struct AddFlashcardView: View {
     var deck: Deck
     
     var body: some View {
-        VStack {
-            Spacer()
-            
+        VStack(spacing: 40) {
             Text("Pytanie")
             TextField("Wprowadź pytanie", text: $foregroundText)
                 .multilineTextAlignment(.center)
@@ -27,16 +25,12 @@ struct AddFlashcardView: View {
             TextField("Wprowadź odpowiedź", text: $backgroundText)
                 .multilineTextAlignment(.center)
             
-            Spacer()
-            
             Button {
                 store.addNewFlashcard(deck: deck, foregroundText: foregroundText, backgroundText: backgroundText)
                 isAdding.toggle()
             } label: {
                 Text("Dodaj fiszke")
             }
-            
-            Spacer()
         }
         .font(.largeTitle)
     }
