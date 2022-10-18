@@ -21,9 +21,9 @@ struct FlashcardRevision: View {
                     
                     Group {
                         if isFlipped {
-                            Text(flashcard.foregroundText)
-                        } else {
                             Text(flashcard.backgroundText)
+                        } else {
+                            Text(flashcard.foregroundText)
                                 .rotationEffect(Angle(degrees: 180))
                         }
                     }

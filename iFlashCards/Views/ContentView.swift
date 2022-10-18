@@ -22,7 +22,7 @@ struct ContentView: View {
                 AddDeckView()
                     .tag(1)
                     .tabItem {
-                        Label("Dodaj talie", systemImage: "plus")
+                        Label("Dodaj talię", systemImage: "plus")
                     }
                 ExploreDecks()
                     .tag(2)

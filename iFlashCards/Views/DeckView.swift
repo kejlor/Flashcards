@@ -66,7 +66,7 @@ struct DeckView: View {
         VStack {
             Spacer()
             
-            Button("Dodaj fiszke") {
+            Button("Dodaj fiszkę") {
                 isAdding.toggle()
             }
             .buttonStyle(CustomButton())
@@ -106,7 +106,7 @@ struct DeckView: View {
         ScrollView {
             FlashcardList(deck: deck, flashcards: deck.flashcards)
         }
-        .searchable(text: $text, prompt: "Wyszukaj fiszke")
+        .searchable(text: $text, prompt: "Wyszukaj fiszkę")
         .onSubmit(of: .search) {
             store.filteredFlashcards(flashcards: deck.flashcards, for: text)
         }

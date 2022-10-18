@@ -51,7 +51,7 @@ struct DeckRevisionView: View {
                 Button {
                     moveToTheNextFlashcard()
                 } label: {
-                    Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszke")
+                    Text(isFlipped ? "Pokaż kolejną" : "Obróć fiszkę")
                 }
                 
                 Spacer()

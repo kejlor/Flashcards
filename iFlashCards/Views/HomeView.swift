@@ -16,7 +16,7 @@ struct HomeView: View {
             NavigationView {
                 VStack {
                     if (store.decks.isEmpty) {
-                        Text("Dodaj pierwszą talie!")
+                        Text("Dodaj pierwszą talię!")
                     } else {
                         ScrollView {
                             DeckList(decks: store.decks)
@@ -25,7 +25,7 @@ struct HomeView: View {
                     }
                 }
                 .navigationTitle("Moje talie")
-                .searchable(text: $text, prompt: "Wyszukaj talie")
+                .searchable(text: $text, prompt: "Wyszukaj talię")
                 .onSubmit(of: .search) {
                     store.filteredDecks(for: text)
                 }

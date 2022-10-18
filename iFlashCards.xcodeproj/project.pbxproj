@@ -129,10 +129,10 @@
 		E9AC2B2627F9CDDB0030D369 /* iFlashCards */ = {
 			isa = PBXGroup;
 			children = (
-				E90E198F2873326D00571C97 /* Managers */,
-				E9C20F25287315B2006B584A /* ViewModels */,
 				E9C20F1C287311EC006B584A /* GoogleService-Info.plist */,
 				E9AC2B2727F9CDDB0030D369 /* iFlashCardsApp.swift */,
+				E90E198F2873326D00571C97 /* Managers */,
+				E9C20F25287315B2006B584A /* ViewModels */,
 				E9AC2B3A27F9CE240030D369 /* Model */,
 				E9AC2B3927F9CE150030D369 /* Extensions */,
 				E9AC2B3827F9CE100030D369 /* Views */,

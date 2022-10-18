@@ -18,7 +18,7 @@ struct ExportDeckView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Wybierz talie: ")
+                Text("Wybierz talię: ")
                     .font(.title)
                 
                 Picker("Wybierz talię do dodania",  selection: $selectedDeck) {
@@ -38,7 +38,7 @@ struct ExportDeckView: View {
                 }
                 .buttonStyle(CustomRedButton())
                 
-                Button("Wyeksportuj talie") {
+                Button("Wyeksportuj talię") {
                     addDeckVM.save(deck: store.searchedDeckByTitle(title: selectedDeck)!)
                     isAdding.toggle()
                     deckListVM.getAllDecks()

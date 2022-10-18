@@ -29,7 +29,7 @@ struct AddFlashcardView: View {
                 store.addNewFlashcard(deck: deck, foregroundText: foregroundText, backgroundText: backgroundText)
                 isAdding.toggle()
             } label: {
-                Text("Dodaj fiszke")
+                Text("Dodaj fiszkę")
             }
         }
         .font(.largeTitle)
