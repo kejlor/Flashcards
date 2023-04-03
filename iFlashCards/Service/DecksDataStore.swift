@@ -32,7 +32,7 @@ final class DecksDataStore: ObservableObject {
             try FileManager().saveFile(contents: jsonString)
             loadDecks()
         } catch {
-            print("Error while fetching JSON: \(error)")
+            print("Error while saving JSON: \(error)")
         }
     }
     
