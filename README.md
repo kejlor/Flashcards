@@ -22,7 +22,7 @@ flashcard decks, do simple test of their knowledge and even share their work or 
 #### Answer view during test
 <img src="Images/answer.png" width="400" height="800">
 #### Browse decks view
-<img src="Images/browseDeck.png" width="400" height="800">
+<img src="Images/browseDecks.png" width="400" height="800">
 #### Export deck sheet view
 <img src="Images/exportDeck.png" width="400" height="800">
 #### Deck with flascards view
