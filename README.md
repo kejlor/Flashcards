@@ -14,7 +14,7 @@ flashcard decks, do simple test of their knowledge and even share their work or 
 
 ### Screenshots
 #### Create new deck view
-<img src="Images/addDeck.png" width="400" height="700">
+<img src="Images/addDeck.png" width="400" height="800">
 #### Create new flashcard view
 <img src="Images/addFlashcard.png">
 #### Question view during test
