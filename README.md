@@ -16,20 +16,22 @@ flashcard decks, do simple test of their knowledge and even share their work or 
 
 #### Create new deck view
 <img src="Images/addDeck.png" width="400" height="800">
-<br>
 
 #### Create new flashcard view
 <img src="Images/addFlashcard.png" width="400" height="800">
-<br>
+
 
 #### Question view during test
 <img src="Images/question.png" width="400" height="800">
 
 #### Answer view during test
 <img src="Images/answer.png" width="400" height="800">
+
 #### Browse decks view
 <img src="Images/browseDecks.png" width="400" height="800">
+
 #### Export deck sheet view
 <img src="Images/exportDeck.png" width="400" height="800">
+
 #### Deck with flascards view
 <img src="Images/flashcards.png" width="400" height="800">
